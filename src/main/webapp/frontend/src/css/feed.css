@@ -1,0 +1,760 @@
+@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@font-face {
+    font-family: 'Vitro_core';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Vitro_core.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.feed__outer-01
+{
+    overflow: hidden;
+    width: 1920px;
+    height: 1080px;
+    background-color: #fbfbfb;
+}
+.feed__inner-01
+{
+    width: 1920px;
+    height: 782px;
+    margin: 1px 0 0;
+    padding: 100px 175px 123.6px 166px;
+    background-color: #fefefe;
+    display:flex;
+}
+.feed__block-01
+{
+    width: 337px;
+    height: 782px;
+}
+.feed__profile-01
+{
+    width: 231px;
+    height: 218px;
+    margin: 7px 0 6px 17px;
+    border-radius: 50%;
+    opacity: 0.18;
+    background-color: #384ea2;
+    position: absolute;
+    display: inline-block;
+}
+.feed__profile__img-01
+{
+    width: 230px;
+    height: 231px;
+    margin: 0 18px 0 0;
+    opacity: 0.81;
+}
+.feed__bar-01
+{
+    width: 0;
+    height: 173.5px;
+    margin: 137.5px 0 0 24px;
+    opacity: 0.44;
+    border: solid 2px #4a4a4a;
+    position: absolute;
+}
+.feed__profile__text-01
+{
+    width: 85px;
+    height: 32px;
+    margin: 135px 11px 0px 44px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 28px;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: 0.42px;
+    text-align: left;
+    color: #384ea2;
+    display: inline-block;
+}
+.feed__profile__text-02
+{
+    width: 94px;
+    height: 28px;
+    margin: 10px 0 0 44px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: 0.36px;
+    text-align: left;
+    color: #4a4a4a;
+    display: inline-block;
+}
+.feed__profile__text-03
+{
+    width: 109px;
+    height: 32px;
+    margin: 35px 11px 10px 44px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 28px;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: 0.42px;
+    text-align: left;
+    color: #384ea2;
+    display: inline-block;
+}
+.feed__profile__text-04
+{
+    width: 191px;
+    height: 28px;
+    margin: 10px 0 0px 44px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: 0.36px;
+    text-align: left;
+    color: #4a4a4a;
+}
+.feed__block-02
+{
+    width: 1417px;
+    height: 782px;
+}
+.feed__bar-02
+{
+    width: 0;
+    height: 541.4px;
+    margin: 17px 0 0;
+    opacity: 0.25;
+    border: solid 1px #4a4a4a;
+    border-style: dashed;
+}
+.ddaom-01
+{
+    width: 52px;
+    height: 94px;
+    margin: 20px 191px 0 80px;
+    font-family: 'Vitro_core', serif;
+    font-size: 80px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: normal;
+    text-align: left;
+    color: #384ea2;
+    display: inline-block;
+    position: absolute;
+}
+.feed__profile__text-05
+{
+    width: 260px;
+    height: 28px;
+    margin: 85px 0 0 80px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 25px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.12;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4a4a4a;
+    display:inline-block;
+}
+.feed__bar-03
+{
+    width: 398.2px;
+    height: 0;
+    opacity: 0.61;
+    border: solid 3px #4a4a4a;
+    margin: 0px 0 0 500px;
+    display: inline-block;
+}
+.feed__profile__text-06
+{
+    width: 95px;
+    height: 35px;
+    margin: 16px 109.8px 11px -392px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 30px;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: 0.45px;
+    text-align: left;
+    color: #384ea2;
+}
+.feed__profile__text-07
+{
+    width: 95px;
+    height: 35px;
+    margin: 16px 109.8px 11px -22px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 30px;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: 0.45px;
+    text-align: left;
+    color: #384ea2;
+}
+.feed__bar-04
+{
+    width: 398.2px;
+    height: 0;
+    margin: 65px 0 0 -397px;
+    opacity: 0.61;
+    border: solid 1px #4a4a4a;
+    display: inline-block;
+}
+.feed__profile__text-08
+{
+    width: 38px;
+    height: 26px;
+    margin: 80px 157.8px 25px -386px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 23px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.13;
+    letter-spacing: 0.35px;
+    text-align: left;
+    color: #4a4a4a;
+}
+.feed__profile__text-09
+{
+    width: 38px;
+    height: 26px;
+    margin: 80px 157.8px 25px -13px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 23px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.13;
+    letter-spacing: 0.35px;
+    text-align: left;
+    color: #4a4a4a;
+}
+.feed__block-03
+{
+    display: flex;
+}
+.feed__profile__detail-01
+{
+    width: 273.2px;
+    height: 366.5px;
+    margin: 62.5px 25.8px 0 71.8px;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.08);
+    border: solid 0.2px #d4d4d4;
+    background-color: #fefefd;
+}
+.feed__profile__detail-02
+{
+    width: 273.2px;
+    height: 366.5px;
+    margin: 62.5px 25.8px 0 5px;
+    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.08);
+    border: solid 0.2px #d4d4d4;
+    background-color: #fefefd;
+}
+.feed__profile__detail__text-01
+{
+    width: 231px;
+    height: 69px;
+    margin: 230.5px 26.4px 0 15.6px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 19px;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.26;
+    letter-spacing: 0.29px;
+    text-align: left;
+    color: #141414;
+    display: inline-block;
+}
+.feed__inner-02
+{
+    width: 1920px;
+    height: 1080px;
+    margin: 1px 0 0;
+    padding: 93px 158px 93.4px 204px;
+    background-color: #fefefe;
+    display: flex;
+}
+.feed__table-01
+{
+    width: 395px;
+    height: 61px;
+    margin: 0 0 1.4px 1px;
+    padding: 18px 519px 18px 22px;
+    background-color: #ebebeb;
+}
+.feed__table__subject
+{
+    width: 220px;
+    height: 36px;
+    margin: 0 75px 2px 0;
+    font-family: 'SpoqaHanSansNeo-Medium', serif;
+    font-size: 29px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.24;
+    letter-spacing: normal;
+    text-align: left;
+    color: #5b5b5b;
+}
+.feed__table__writer-01
+{
+    width: 55px;
+    height: 23px;
+    margin: 5px 0 0 0;
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-size: 19px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.21;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4e4e4e;
+    display: inline-block;
+}
+.feed__table__writer-02
+{
+    width: 52px;
+    height: 23px;
+    margin: 2px 21px 0 9px;
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-size: 19px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.21;
+    letter-spacing: normal;
+    text-align: left;
+    color: #848484;
+}
+.feed__table-02
+{
+    width: 899.8px;
+    height: 450.1px;
+    padding: 18px;
+    background-color: #f9f9f9;
+}
+.feed__table__button
+{
+    width: 54px;
+    height: 27px;
+    margin: 520px 46px 11.6px 99px;
+    padding: 15px 52px 16px;
+    border-radius: 101px;
+    border: solid 2px #384ea2;
+    text-align: center;
+}
+.feed__table__button__text
+{
+    width: 41px;
+    height: 27px;
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-size: 22px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.23;
+    letter-spacing: 0.33px;
+    color: #384ea2;
+    
+}
+.feed__bar-05
+{
+    width: 0;
+    height: 595.6px;
+    opacity: 0.25;
+    border: solid 1px #4a4a4a;
+    border-style: dashed;
+    margin: -15px 0 0 0;
+    opacity: 0.1;
+}
+.feed__profile-02
+{
+    width: 231px;
+    height: 218px;
+    margin: 7px 0px 6px 83px;
+    opacity: 0.18;
+    background-color: #384ea2;
+    border-radius: 50%;
+    position: relative;
+}
+.feed__profile__img-02 
+{
+    width: 230px;
+    height: 231px;
+    margin: 0 18px 0 -250px;
+    opacity: 0.81;
+}
+.ddaom-02
+{
+    width: 52px;
+    height: 94px;
+    margin: 250px 0px 0 -248px;
+    font-family: 'Vitro_core', serif;
+    font-size: 80px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: normal;
+    text-align: left;
+    color: #384ea2;
+}
+.feed__profile__text-010
+{
+    width: 253px;
+    height: 28px;
+    margin: 310px 0 0 -50px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 25px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.12;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4a4a4a;
+}
+.feed__bar-06
+{
+    width: 25.5px;
+    height: 0;
+    margin: 435px 0 0 -250px;
+    opacity: 0.44;
+    border: solid 2px #4a4a4a;
+}
+.feed__profile__text-011
+{
+    width: 85px;
+    height: 32px;
+    margin: 455px 11px 10px -33px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 28px;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: 0.42px;
+    text-align: left;
+    color: #384ea2;
+}
+.feed__profile__text-012
+{
+    width: 95px;
+    height: 28px;
+    margin: 498px 0 0 -95px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 24px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: 0.36px;
+    text-align: left;
+    color: #4a4a4a;
+}
+.feed__table-03
+{
+    width: 873px;
+    height: 149.1px;
+    padding: 22.5px 30px 20.4px 33px;
+    background-color: #dbdbdb;
+}
+.feed__table__text-01
+{
+    width: 127px;
+    height: 23px;
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-size: 19px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.21;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4e4e4e;
+}
+.feed__bar-07
+{
+    width: 0;
+    height: 21.5px;
+    margin: 0 0 -3px 0;
+    opacity: 0.69;
+    border: solid 2px #654b8d;
+    display: inline-block;
+}
+.feed__table__text-02
+{
+    width: 53px;
+    height: 35px;
+    margin: 0 0 0 7px;
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-size: 28px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: 0.42px;
+    text-align: left;
+    color: #384ea2;
+    display: inline-block;
+}
+.feed__table__text-03
+{
+    width: 126px;
+    height: 34px;
+    margin: 80px 0 0 755px;
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-size: 27px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.26;
+    letter-spacing: normal;
+    text-align: left;
+    color: #5b5b5b;
+    display: inline-block;
+}
+.feed__bar-08
+{
+    width: 0;
+    height: 946.6px;
+    opacity: 0.1;
+    margin: -20px 0 0 0;
+    border: solid 1px #4a4a4a;
+    border-style: dashed;
+}
+.feed__bar-09
+{
+    width: 368.5px;
+    height: 0;
+    opacity: 0.44;
+    margin: 200px 0 0 -250px;
+    border: solid 2px #4a4a4a;
+    background-color: rgba(0, 0, 0, 0);
+}
+.feed__table__text-04
+{
+    width: 108px;
+    height: 25px;
+    margin: 215px 0 0 -370px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 22px;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.14;
+    letter-spacing: 0.33px;
+    text-align: left;
+    color: #384ea2;
+    display: inline-block;
+}
+.feed__table__text-05
+{
+    width: 111px;
+    height: 26px;
+    margin: 213px 0 19.5px 151.5px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 23px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.13;
+    letter-spacing: 0.35px;
+    text-align: left;
+    color: #4a4a4a;
+    display: inline-block;
+}
+.feed__table__text-06
+{
+    width: 290px;
+    height: 52px;
+    margin: 260px 0 0 -370px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 23px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.13;
+    letter-spacing: 0.35px;
+    text-align: left;
+    color: #4a4a4a;
+}
+.feed__inner-03
+{
+    width: 1920px;
+    height: 1023px;
+    margin: 1px 0 0;
+    padding: 66.7px 552px 0px;
+    background-color: #fefefe;
+}
+.feed__question__text-01
+{
+    width: 50px;
+    height: 22px;
+    margin: 0 187px 10px 50px;
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-size: 18px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.22;
+    letter-spacing: normal;
+    text-align: center;
+    color: #384ea2;
+    display: inline-block;
+}
+.feed__question__input-01
+{
+    width: 205px;
+    height: 40px;
+    margin: 0px 542px 0 59px;
+    position: relative;
+    padding: 0 0 0 9px;
+    border: solid 1.3px #b5b5b5;
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-size: 20px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4a4a4a;
+}
+.feed__question__input-02
+{
+    width: 297px;
+    height: 30px;
+    margin: 10px 0 17px;
+    padding: 8px 438.5px 7px 9px;
+    border: solid 1.3px #b5b5b5;
+    margin: 0 0 0 59px;
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-size: 20px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4a4a4a;
+}
+.feed__question__input-03
+{
+    width: 747px;
+    height: 350px;
+    margin: -5px 0.1px 43px 50px;
+    padding: 9px;
+    border: 0px;
+    resize: none;
+}
+.ck.ck-editor__editable:not(.ck-editor__nested-editable) {
+    min-height: 349.3px;
+}
+.feed__question__button-01
+{
+    width: 67px;
+    height: 27px;
+    margin: 60px 0 0 252.9px;
+    padding: 15px 39px 16px;
+    border-radius: 101px;
+    border: solid 2px #384ea2;
+    display: inline-block;
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-size: 22px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.23;
+    letter-spacing: 0.33px;
+    text-align: left;
+    color: #384ea2;
+}
+.feed__question__button-01:hover
+{
+    width: 67px;
+    height: 27px;
+    margin: 60px 0 0 252.9px;
+    padding: 15px 39px 16px;
+    border-radius: 101px;
+    border: solid 2px #384ea2;
+    background-color: #384ea2;
+    display: inline-block;
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-size: 22px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.23;
+    letter-spacing: 0.33px;
+    text-align: left;
+    color: #fff;
+}
+.feed__question__button-02
+{
+    width: 45px;
+    height: 27px;
+    margin: 0 0 0 20px;
+    padding: 15px 50px 20px;
+    border-radius: 101px;
+    border: solid 2px #384ea2;
+    display: inline-block;
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-size: 22px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.23;
+    letter-spacing: 0.33px;
+    text-align: left;
+    color: #384ea2;
+}
+.feed__question__button-02:hover
+{
+    width: 45px;
+    height: 27px;
+    margin: 0 0 0 20px;
+    padding: 15px 50px 20px;
+    border-radius: 101px;
+    border: solid 2px #384ea2;
+    background-color: #384ea2;
+    color: #fff;
+    display: inline-block;
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-size: 22px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.23;
+    letter-spacing: 0.33px;
+    text-align: left;
+    color: #fff;
+}

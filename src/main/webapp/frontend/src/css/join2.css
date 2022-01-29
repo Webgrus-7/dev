@@ -1,0 +1,117 @@
+@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.join__outer
+{
+    overflow: hidden;
+    width: 1920px;
+    height: 1080px;
+    background-color: #fbfbfb;
+    overflow:hidden;
+}
+.join__block-04
+{
+    width: 1920px;
+    height: 782px;
+    margin: 1px 0 0;
+    background-color: #fefefe;
+    text-align: center;
+}
+.join__img-02
+{
+    width: 47px;
+    height: 47px;
+    margin: 50px 0px -10px -60px;
+}
+.join__block__text-06
+{
+    width: 140px;
+    height: 48px;
+    margin: 0 0 0 4px;
+    font-family: 'SpoqaHanSansNeo-Medium', serif;
+    font-size: 38px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.26;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4a4a4a;
+}
+.join__main__text
+{
+    width: 600px;
+    height: 69px;
+    margin: 50px 453px 40px 560px;
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-size: 20px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.25;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4a4a4a;
+    display:inline-block;
+}
+.join__main__text-01
+{
+    font-weight: 500;
+    font-size: 35px;
+    color: #654b8d;
+}
+.join__main__text-02
+{
+    font-size: 35px;
+    font-weight: 300;
+}
+.join__main__text-03
+{
+    font-weight: normal;
+}
+.EMAIL__text
+{
+    width: 200px;
+    height: 27px;
+    margin: 0 201px 4px 80px;
+    font-family: 'SpoqaHanSansNeo-Medium', serif;
+    font-size: 22px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.23;
+    letter-spacing: normal;
+    text-align: left;
+    color: #5b5b5b;
+    display:inline-block;
+}
+.EMAIL__input
+{
+    width: 252px;
+    height: 42px;
+    margin: 4px 0 11px -60px;
+    padding: 0 0 0 10px;
+    background-color: #efefef;
+    border: 0px;
+}
+.join__block__button-02
+{
+    width: 45px;
+    height: 27px;
+    margin: 30px 1254px 0 855px;
+    padding: 15px 50px 16px;
+    border-radius: 101px;
+    border: solid 2px #384ea2;
+    display: table;
+    text-decoration-line: none;
+}

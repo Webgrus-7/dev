@@ -1,0 +1,56 @@
+package com.solveus.domain.entity;
+
+import lombok.AccessLevel;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
+
+import javax.persistence.*;
+import java.time.LocalDateTime;
+
+@Getter
+@Entity
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
+@EntityListeners(AuditingEntityListener.class)
+@Table(name="Problems_content_cs",schema = "solvewithus")
+public class MultipleChoice {
+
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    @Column(nullable = false)
+    private Long problem_id;
+
+    @Column(columnDefinition =  "TEXT", nullable = false)
+    private String question;
+
+    @Column(columnDefinition =  "TEXT",nullable = false)
+    private String choices;
+
+    @Column(nullable = false)
+    private Integer answer;
+
+    @Column(nullable = false)
+    private Integer p_type;
+
+    @CreatedDate
+    @Column(updatable = false)
+    private LocalDateTime created;
+
+    @LastModifiedDate
+    private LocalDateTime updated;
+
+    @Builder
+    public MultipleChoice(Long id, Long problem_id, String question, String choices,Integer answer, Integer p_type) {
+        this.id = id;
+        this.problem_id = problem_id;
+        this.question = question;
+        this.choices = choices;
+        this.answer = answer;
+        this.p_type = p_type;
+    }
+}

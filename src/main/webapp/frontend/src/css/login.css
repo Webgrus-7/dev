@@ -1,0 +1,223 @@
+@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body
+{
+    overflow: hidden;
+}
+.login__outer
+{
+    width: 1920px;
+    height: 1080px;
+    background-color: #fbfbfb;
+}
+.feed__text-01
+{
+    width: 60px;
+    height: 31px;
+    margin: 36.1px 593px 33px 130px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 27px;
+    font-weight: 800;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.15;
+    letter-spacing: 0.41px;
+    text-align: left;
+    color: #4a4a4a;
+    display: inline-block;
+    }
+.feed__text-02
+{
+    width: 50px;
+    height: 61px;
+    margin: 21.1px 0px 18px 250px;
+    opacity: 0.74;
+    font-family: Helvetica;
+    font-size: 50px;
+    font-weight: 900;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.22;
+    letter-spacing: 0.75px;
+    text-align: left;
+    color: #384ea2;
+    display: inline-block;
+}
+.feed__text-03
+{
+    width: 90px;
+    height: 31px;
+    margin: 33px 158px 33px 589px;
+    font-family: 'Nanum Myeongjo', serif;
+    font-size: 27px;
+    font-weight: bold;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.15;
+    letter-spacing: 0.41px;
+    text-align: left;
+    color: #4a4a4a;
+    display: inline-block;
+}
+.login__bar
+{
+    width: 1920px;
+    height: 0;
+    border: solid 0.1px #ededed;
+}
+.login__block-01
+{
+    width: 775px;
+    height: 782px;
+    margin: 0px 0 1px;
+    padding: 0 0 163px;
+    background-color: #fefefe;
+    float:left;
+}
+.login__block__text-01
+{
+    width: 121px;
+    height: 61px;
+    margin: 134px 327px 60px 327px;
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-size: 48px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.27;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4a4a4a;
+    display:inline-block;
+}
+.login__block-02
+{
+    margin: 0px 63px 8px 220px;
+}
+.ID__text
+{
+    width: 25px;
+    height: 31px;
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-size: 25px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.24;
+    letter-spacing: normal;
+    text-align: left;
+    color: #5b5b5b;
+}
+.ID__input
+{
+    width: 324px;
+    height: 48px;
+    margin: 8px 0 10px;
+    padding:0px 0px 0px 10px;
+    border:0px;
+    background-color: #efefef;
+}
+.PW__text
+{
+    width: 37px;
+    height: 31px;
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-size: 25px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.24;
+    letter-spacing: -1.25px;
+    text-align: left;
+    color: #5b5b5b;
+}
+.login__block__button
+{
+    width: 80px;
+    height: 31px;
+    margin: 20px 0px 60px 218px;
+    padding: 20px 127px 21px;
+    border-radius: 101px;
+    border: solid 2px #384ea2;
+    background-color: #384ea2;
+    display:table;
+}
+.login__block__button__text
+{
+    width: 75px;
+    height: 31px;
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-size: 25px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.24;
+    letter-spacing: 0.38px;
+    text-align: center;
+    color: #fff;
+    display:table-cell;
+    vertical-align:middle;
+}
+.login__block__text-02
+{
+    width: 246px;
+    height: 27px;
+    margin: 0px 0 0 309px;
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-size: 22px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    text-decoration: underline;
+    line-height: 1.23;
+    letter-spacing: normal;
+    text-align: left;
+    color: #384ea2;
+    display: inline-block;
+}
+.login__block-03
+{
+    width: 1145px;
+    height: 782px;
+    margin: 0px 0 0 775px;
+    background-image: url("../img/login.png");
+    background-size: 1145px 782px;
+    background-repeat: no-repeat;
+}
+.login__block__text-03
+{
+    width: 338px;
+    height: 90px;
+    margin: 51px 202px 6px 70px;
+    font-family: Helvetica;
+    font-size: 77px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4a4a4a;
+    display: inline-block;
+}
+.login__block__text-04
+{
+    width: 540px;
+    height: 62px;
+    margin: 6px 0 495px 70px;
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-size: 25px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.24;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4a4a4a;
+    display:inline-block;
+}

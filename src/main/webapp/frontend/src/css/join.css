@@ -1,0 +1,180 @@
+@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SpoqaHanSansNeo-Medium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/SpoqaHanSansNeo-Medium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.join__outer
+{
+    overflow: hidden;
+    width: 1920px;
+    height: 1080px;
+    background-color: #fbfbfb;
+    overflow:hidden;
+}
+.join__block-01
+{
+    width: 775px;
+    height: 782px;
+    margin: 0px 0 1px;
+    padding: 0 0 163px;
+    background-color: #fefefe;
+    float:left;
+    overflow:hidden;
+}
+.join__img-01
+{
+    width: 47px;
+    height: 47px;
+    margin: 40px 4px -10px 295px;
+}
+.join__block__text-01
+{
+    width: 140px;
+    height: 48px;
+    margin: 0 0 0 4px;
+    font-family: 'SpoqaHanSansNeo-Medium', serif;
+    font-size: 38px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.26;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4a4a4a;
+}
+.join__block__text-02
+{
+    width: 179px;
+    height: 41px;
+    margin: 40px 287px 0 158px;
+    font-family: Helvetica;
+    font-size: 35px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4a4a4a;
+    display: inline-block;
+}
+.join__block__text-03
+{
+    width: 467px;
+    height: 22px;
+    margin: 0 0 0 157px;
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-size: 18px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.22;
+    letter-spacing: normal;
+    text-align: left;
+    color: #5b5b5b;
+    display:inline-block;
+}
+.join__block-02
+{
+    margin: 50px 0 4px 259px;
+}
+.ID__text
+{
+    width: 61px;
+    height: 27px;
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-size: 22px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.23;
+    letter-spacing: normal;
+    text-align: left;
+    color: #5b5b5b;
+}
+.ID__input
+{
+    width: 252px;
+    height: 42px;
+    margin: 4px 0 11px;
+    padding: 0 0 0 10px;
+    background-color: #efefef;
+    border: 0px;
+}
+.join__block__button-01
+{
+    width: 45px;
+    height: 27px;
+    margin: 33px 1254px 0 263px;
+    padding: 15px 50px 16px;
+    border-radius: 101px;
+    border: solid 2px #384ea2;
+    display: table;
+    text-decoration-line: none;
+}
+.join__block__button__text
+{
+    width: 41px;
+    height: 27px;
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-size: 22px;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.23;
+    letter-spacing: 0.33px;
+    text-align: center;
+    color: #384ea2;
+    display: table-cell;
+    vertical-align: middle;
+}
+.join__block-03
+{
+    width: 1145px;
+    height: 782px;
+    margin: 0px 0 0 775px;
+    background-image: url("../img/login.png");
+    background-size: 1145px 782px;
+    background-repeat: no-repeat;
+    overflow:hidden;
+}
+.join__block__text-04
+{
+    width: 338px;
+    height: 90px;
+    margin: 51px 202px 6px 70px;
+    font-family: Helvetica;
+    font-size: 77px;
+    font-weight: 300;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.17;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4a4a4a;
+    display: inline-block;
+}
+.join__block__text-05
+{
+    width: 540px;
+    height: 62px;
+    margin: 6px 0 495px 70px;
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-size: 25px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.24;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4a4a4a;
+    display:inline-block;
+}

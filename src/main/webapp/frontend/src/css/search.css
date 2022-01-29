@@ -1,0 +1,162 @@
+@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+body {
+  overflow-x: hidden;
+}
+/*페이지1*/
+.search {
+  display: flex;
+  flex-direction: column;
+  height: 1069px;
+}
+.sort {
+  width: 700px;
+  margin: 70px auto; /*좌우 중앙배치*/
+  display: flex; /*넣어줘야 수평 맞음*/
+}
+.sort_title {
+  font-family: "SpoqaHanSansNeo-Regular", serif;
+  font-size: 18px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.22;
+  letter-spacing: normal;
+  text-align: center;
+  color: #384ea2;
+  margin-top: 7px;
+}
+.sort_option {
+  width: 205px;
+  height: 35px;
+  margin: 0px 60px 0 20px;
+  padding: 0 0 2px 9px;
+  border: solid 1.3px #b5b5b5;
+  font-family: "SpoqaHanSansNeo-Regular", serif;
+  font-size: 17px;
+  font-weight: 500;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.25;
+  letter-spacing: normal;
+  text-align: left;
+  color: #4a4a4a;
+}
+.searchbttn {
+  width: 45px;
+  height: 45px;
+  margin-top: -6px;
+  opacity: 0.68;
+}
+/*문제박스*/
+.Qlist {
+  width: 90%;
+}
+.boxList {
+  margin: 30px 0;
+  margin-left: 10%;
+}
+.boxList ul li {
+  display: inline-block;
+}
+.box {
+  width: 300px;
+  height: 330px;
+  padding: 20px 20px 50px 21px;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.08);
+  border: solid 0.2px #d4d4d4;
+  background-color: #fefefd;
+  margin-left: 30px;
+  display: inline-block;
+}
+.box_title {
+  font-family: NanumMyeongjo;
+  font-size: 21px;
+  font-weight: 800;
+  height: 150px; /*제목길이 상관없이 일정하게 칸 유지*/
+  font-stretch: normal;
+  font-style: normal;
+  letter-spacing: 0.39px;
+  text-align: left;
+  color: #141414;
+  line-height: 1.27;
+}
+.box_by {
+  font-family: NanumMyeongjo;
+  font-size: 17px;
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 2;
+  letter-spacing: 0.3px;
+  text-align: left;
+  color: #4a4a4a;
+  margin-top: 2px;
+}
+.byname {
+  color: #654b8d;
+}
+/*해시태그*/
+.hashtag {
+  font-family: NanumMyeongjo;
+  font-size: 15px;
+  font-weight: 700;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.47;
+  letter-spacing: 0.29px;
+  text-align: left;
+  color: #5b5b5b;
+  margin-top: 60px;
+}
+/*각 문제 정보*/
+.info {
+  margin-top: 35px;
+  margin-left: -2px;
+  width: 300px;
+}
+.line1 {
+  height: 1px;
+  opacity: 0.61;
+  border: solid 1px #4a4a4a;
+  background-color: #4a4a4a;
+  margin-bottom: 5.8px;
+}
+.infoName {
+  font-family: NanumMyeongjo;
+  font-size: 14px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.13;
+  letter-spacing: 0.23px;
+  text-align: left;
+  color: #384ea2;
+  display: flex;
+  justify-content: space-between;
+}
+.infoName span {
+  margin-right: 40px;
+}
+.infoData span {
+  margin-right: 10px;
+}
+.line2 {
+  opacity: 0.21;
+  border: solid 0.01px #4a4a4aad;
+  margin-bottom: 5.8px;
+  margin-top: 5.8px;
+}
+.infoData {
+  font-family: NanumMyeongjo;
+  font-size: 15px;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.13;
+  letter-spacing: 0.23px;
+  text-align: left;
+  color: #5b5b5b;
+  display: flex;
+  justify-content: space-between;
+}

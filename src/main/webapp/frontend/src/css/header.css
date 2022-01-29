@@ -1,0 +1,104 @@
+@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+body {
+  overflow-x: hidden;
+}
+
+@font-face {
+  font-family: "HangeulNuri-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_three@1.0/HangeulNuri-Bold.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.header {
+  width: 100%; /*ㅅㅈ*/
+  height: 130px;
+  -webkit-backdrop-filter: blur(30px);
+  backdrop-filter: blur(30px);
+  box-shadow: 6px 6px 6px 0 rgba(126, 126, 126, 0.16);
+  background-color: #efefef;
+  display: flex;
+  justify-content: space-between;
+}
+.title {
+  width: 200px;
+  height: 74px;
+  font-family: "HangeulNuri-Bold";
+  font-size: 40px;
+  font-weight: 300;
+  font-stretch: condensed;
+  font-style: normal;
+  line-height: 1.23;
+  letter-spacing: normal;
+  text-align: left;
+  color: #654b8d;
+  display: inline-block;
+  margin-left: 60px; /**/
+  margin-top: 38px;
+}
+.menu {
+  display: flex; /*넣어야 일렬가능*/
+  margin-right: 60px;
+  margin-top: 35px;
+}
+.login {
+  margin-top: 20px;
+}
+.login__text {
+  margin: 0 31.5px 0 0;
+  font-family: "Nanum Myeongjo", serif;
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.15;
+  letter-spacing: 0.41px;
+  text-align: left;
+  color: #4a4a4a;
+}
+.join__text {
+  margin: 0 31.5px 0 31.5px;
+  font-family: "Nanum Myeongjo", serif;
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.15;
+  letter-spacing: 0.41px;
+  text-align: left;
+  color: #4a4a4a;
+}
+.makeQ {
+  width: 200px;
+  height: 55px;
+  border-radius: 8px;
+  background-color: #384ea2;
+  text-align: center;
+  border-style: none;
+  padding-bottom: 18px;
+}
+.button__img {
+  width: 20px;
+  height: 20px;
+  margin: 17px 1px -4px 0;
+}
+.bar {
+  width: 1.38px;
+  background-color: #b4b4b4;
+  height: 20px;
+  display: inline-block;
+  margin-bottom: -3px;
+}
+.button__text {
+  margin: 0px 0px 0px 9px;
+  font-family: "Nanum Myeongjo", serif;
+  font-size: 20px;
+  font-weight: bold;
+  font-stretch: normal;
+  font-style: normal;
+  line-height: 1.15;
+  letter-spacing: 0.41px;
+  color: #f1f1f1;
+  display: inline-block;
+}
