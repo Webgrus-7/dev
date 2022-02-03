@@ -3,14 +3,15 @@ import Header_2 from "./header2";
 import "./css/join2.css";
 import axios from "axios";
 import React, { useState } from "react";
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import Register from "./img/register_title.png"
 
-function Join2(props)
+function Join2()
 {
-    const name = props.name;
-    const pw = props.pw;
-    const nickName = props.nickName;
+    const location = useLocation();
+    const userID = location.state.userID;
+    const password = location.state.password;
+    const nickname = location.state.nickname;
     const [email, setEmail] = useState("");
     const [phone, setPhone] = useState("");
     const [intro, setIntro] = useState("");
@@ -52,18 +53,18 @@ function Join2(props)
                     <input type="text" className="EMAIL__input" onChange={(e)=>{setMajor(e.target.value)}}></input>
                 </form>
                 <div className="join__block__button-02">
-                    <span className="join__block__button__text" onClick={()=>{register()}}>다음</span>
+                    <span className="join__block__button__text" onClick={()=>{register(); check();}}>다음</span>
                 </div>
             </div>
         </div>
     );
     function register() {
         return axios.post("/user/local/new",{
-            name,
+            userID,
             email,
             phone,
-            nickName,
-            pw,
+            nickname,
+            password,
             major,
             intro
         })
@@ -72,6 +73,25 @@ function Join2(props)
             console.log(response);
             navigate('/join3');
         })
+    }
+    function check()
+    {
+        if(isEmail(email)===false)
+        {
+            alert("올바른 이메일 주소를 입력해주세요.");
+        }
+        else if(isCelluar(phone)===false)
+        {
+            alert("올바른 휴대폰 번호를 입력해주세요.");
+        }
+    }
+    function isEmail(email) {
+        var exp = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*\.[a-zA-Z]{2,3}$/i;
+        return exp.test(email); // 형식에 맞는 경우 true 리턴
+    }
+    function isCelluar(phone) {
+        var exp = /^01(?:0|1|[6-9])-(?:\d{3}|\d{4})-\d{4}$/;
+        return exp.test(phone); // 형식에 맞는 경우 true 리턴
     }
 }
 export default Join2;

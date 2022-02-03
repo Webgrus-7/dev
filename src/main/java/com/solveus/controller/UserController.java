@@ -28,10 +28,10 @@ public class UserController {
         return userDtoList;
     }
 
-    @RequestMapping(value = "/{phone}", method = RequestMethod.GET)
-    public UserDto userInfo(@PathVariable("phone") String phone) {
+    @RequestMapping(value = "/{userID}", method = RequestMethod.GET)
+    public UserDto userInfo(@PathVariable("userID") String userID) {
         //userService.getUserByPhone();
-        return userService.getUserByPhone(phone);
+        return userService.getUserByUserID(userID);
     }
 
 
@@ -39,7 +39,7 @@ public class UserController {
     public ResponseEntity<User> join(@RequestBody JoinDto value) throws Exception {
 
         User user = User.builder()
-                .name(value.getName())
+                .userID(value.getUserID())
                 .email(value.getEmail())
                 .phone(value.getPhone())
                 .nickname(value.getNickname())

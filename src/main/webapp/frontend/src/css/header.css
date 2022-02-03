@@ -45,6 +45,9 @@ body {
 .login {
   margin-top: 20px;
 }
+a {
+  text-decoration-line: none;
+}
 .login__text {
   margin: 0 31.5px 0 0;
   font-family: "Nanum Myeongjo", serif;

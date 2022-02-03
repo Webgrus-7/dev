@@ -3,7 +3,7 @@ package com.solveus;
 import com.solveus.domain.entity.User;
 import com.solveus.domain.repository.UserRepository;
 import com.solveus.exception.ErrorCode;
-import com.solveus.exception.PhoneDuplicateException;
+import com.solveus.exception.UserIDDuplicateException;
 import com.solveus.service.SaltUtil;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -25,18 +25,18 @@ public class UserTest {
     @Test
     public void save() {
         User user = User.builder()
-                .name("주주")
+                .userID("user2")
                 .email("kk@gmail.com")
-                .phone("010-1111-2222")
+                .phone("010-1212-2222")
                 .nickname("wnwn")
                 .password("solve1234")
                 .major("com")
                 .intro("sid")
                 .build();
 
-        User alreadyUser = userRepository.findByPhone(user.getPhone());
+        User alreadyUser = userRepository.findByUserID(user.getUserID());
         if(alreadyUser!= null){
-            throw new PhoneDuplicateException("phone duplicated", ErrorCode.PHONE_DUPLICATION);
+            throw new UserIDDuplicateException("userID duplicated", ErrorCode.USERID_DUPLICATION);
         }
         String password = user.getPassword();
         String salt= saltUtil.genSalt();

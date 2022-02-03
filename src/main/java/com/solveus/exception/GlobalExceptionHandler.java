@@ -16,9 +16,9 @@ public class GlobalExceptionHandler {
         return e.getMessage();
     }
 
-    @ExceptionHandler(PhoneDuplicateException.class)
-    public ResponseEntity<ErrorResponse> handlerPhoneDuplicateException(PhoneDuplicateException ex){
-        log.error("handlerPhoneDuplicateException", ex);
+    @ExceptionHandler(UserIDDuplicateException.class)
+    public ResponseEntity<ErrorResponse> handlerUserIDDuplicateException(UserIDDuplicateException ex){
+        log.error("handlerUerIDDuplicateException", ex);
         ErrorResponse response = new ErrorResponse(ex.getErrorCode());
         return new ResponseEntity<>(response, HttpStatus.valueOf(ex.getErrorCode().getStatus().value()));
     }
