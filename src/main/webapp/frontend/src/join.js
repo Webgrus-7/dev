@@ -9,10 +9,10 @@ function Join()
 {
     let text = ["web test는 어쩌고 저쩌고...아직 못 정함",<br />,
         "기반으로 한 공부하는 모두를 위한 공유 스터디서비스"]
-    const [name, setName] = useState("");
-    const [pw, setPw] = useState("");
+    const [userID, setId] = useState("");
+    const [password, setPw] = useState("");
     const [pwCheck, setPwCheck] = useState("");
-    const [nickName, setNickName] = useState("");
+    const [nickname, setNickName] = useState("");
     const navigate = useNavigate();
     return (
         <div className="join__outer">
@@ -27,7 +27,7 @@ function Join()
                 <div className="join__block-02">
                     <span className="ID__text">아이디</span>
                     <form>
-                        <input type="text" className="ID__input" onChange={(e)=>{setName(e.target.value)}}></input>
+                        <input type="text" className="ID__input" onChange={(e)=>{setId(e.target.value)}}></input>
                     </form>
                     <span className="ID__text">비밀번호</span>
                     <form>
@@ -42,7 +42,7 @@ function Join()
                         <input type="text" className="ID__input" onChange={(e)=>{setNickName(e.target.value)}}></input>
                     </form>
                     <div className="join__block__button-01">
-                        <span className="join__block__button__text" name={name} pw={pw} nickName={nickName} onClick={()=>{PW_check()}}>다음</span>
+                        <span className="join__block__button__text" userID={userID} password={password} nickname={nickname} onClick={()=>{check()}}>다음</span>
                     </div>
                 </div>
             </div>
@@ -52,15 +52,31 @@ function Join()
             </div>
         </div>
     );
-    function PW_check()
+    function check()
     {
-        if(pwCheck!==pw)
+        if(userID=="")
+        {
+            alert("아이디를 입력해주세요.");
+        }
+        else if(password=="")
+        {
+            alert("비밀번호를 입력해주세요.");
+        }
+        else if(password.length<8 || password.length>20)
+        {
+            alert("비밀번호는 8자 이상 20자 이하로 입력해주세요.");
+        }
+        else if(nickname=="")
+        {
+            alert("닉네임을 입력해주세요.");
+        }
+        else if(pwCheck!==password)
         {
             alert("비밀번호가 일치하지 않습니다.");
         }
         else
         {
-            navigate('/join2', {name:name, pw:pw, nickName:nickName});
+            navigate('/join2', {state:{userID:userID, password:password, nickname:nickname}});
         }
     }
 }

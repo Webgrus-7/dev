@@ -17,8 +17,8 @@ public enum ErrorCode {
     // 500 INTERNAL_SERVER_ERROR : 내부 서버 오류
     INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "내부 서버 오류입니다."),
 
-    // 핸드폰 번호 중복
-    PHONE_DUPLICATION(HttpStatus.BAD_REQUEST, "핸드폰 번호가 중복되었습니다.")
+    // 아이디 중복
+    USERID_DUPLICATION(HttpStatus.BAD_REQUEST, "아이가 중복되었습니다.")
     ;
 
     private final HttpStatus status;

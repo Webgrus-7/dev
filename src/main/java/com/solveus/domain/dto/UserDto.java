@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 public class UserDto {
     private Long id;
-    private String name;
+    private String userID;
     private String email;
     private String phone;
     private String password;
@@ -25,7 +25,7 @@ public class UserDto {
     public User toEntity() {
         User build = User.builder()
                 .id(id)
-                .name(name)
+                .userID(userID)
                 .phone(phone)
                 .password(password)
                 .nickname(nickname)
@@ -37,9 +37,9 @@ public class UserDto {
     }
 
     @Builder
-    public UserDto(Long id, String name, String email, String phone, String nickname, String major, String intro, LocalDateTime created, LocalDateTime updated) {
+    public UserDto(Long id,String userID, String email, String phone, String nickname, String major, String intro, LocalDateTime created, LocalDateTime updated) {
         this.id = id;
-        this.name = name;
+        this.userID = userID;
         this.email = email;
         this.phone = phone;
         this.nickname = nickname;
