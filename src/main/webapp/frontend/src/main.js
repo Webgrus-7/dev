@@ -1,6 +1,6 @@
 import Header from "./header";
 import Header2 from "./header2";
-import "./css/main.css";
+import "./css/main.scss";
 import ddaom from "./img/ddaom1.png";
 import arrow from "./img/arrow.png";
 import { Link } from "react-router-dom";

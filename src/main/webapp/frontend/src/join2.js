@@ -1,6 +1,6 @@
 import Header_1 from "./header";
 import Header_2 from "./header2";
-import "./css/join2.css";
+import "./css/join2.scss";
 import axios from "axios";
 import React, { useState } from "react";
 import { useLocation, useNavigate } from 'react-router-dom';

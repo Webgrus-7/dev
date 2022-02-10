@@ -1,6 +1,6 @@
 import Header_1 from "./header";
 import Header_2 from "./header2";
-import "./css/join3.css";
+import "./css/join3.scss";
 import { Link } from "react-router-dom";
 
 function Join()

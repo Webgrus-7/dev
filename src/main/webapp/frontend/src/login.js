@@ -1,7 +1,7 @@
 import Header from "./header";
 import Header2 from "./header2";
 import { Link } from "react-router-dom";
-import "./css/login.css";
+import "./css/login.scss";
 
 function Login()
 {
@@ -14,13 +14,13 @@ function Login()
             <div className="login__block-01">
                 <span className="login__block__text-01">log in</span>
                 <div className="login__block-02">
-                    <span className="ID__text">ID</span>
+                    <span className="ID__text-01">ID</span>
                     <form>
-                        <input type="text" className="ID__input"></input>
+                        <input type="text" className="ID__input-01"></input>
                     </form>
                     <span className="PW__text">PW</span>
                     <form>
-                        <input type="password" className="ID__input"></input>
+                        <input type="password" className="ID__input-01"></input>
                     </form>
                 </div>
                 <div className="login__block__button">

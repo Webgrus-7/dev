@@ -1,12 +1,19 @@
 @import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
 @import url(//db.onlinewebfonts.com/c/d87bc93ce13d8967fcd01755292938b2?family=HelveticaNeue+MediumExt);
+@mixin font()
+{
+  font-family: "Nanum Myeongjo", serif;
+  font-stretch: normal;
+  font-style: normal;
+  font-weight: bold;
+}
 .main {
   width: 1920px;
   height: 1080px;
 }
 .main-01 {
-  background-image: url("../img/background1.jpg");
+  background-image: url(../img/background1.jpg);
   background-repeat: no-repeat;
   width: 1903px;
   height: 1280px;
@@ -26,7 +33,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  background-image: url("../img/background2.PNG");
+  background-image: url(../img/background2.PNG);
   background-repeat: no-repeat;
   background-size: cover;
   position: absolute;
@@ -46,11 +53,8 @@
   width: 538px;
   height: 120px;
   margin: 0px 0px 0px 370px;
-  font-family: "Nanum Myeongjo", serif;
+  @include font();
   font-size: 26px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.19;
   letter-spacing: 0.39px;
   text-align: left;
@@ -58,19 +62,9 @@
   display: inline-block;
 }
 .main__text__block-02 {
+  @extend .main__text__block-01;
   width: 700px;
-  height: 120px;
-  margin: 10px 0px 0px 370px;
-  font-family: "Nanum Myeongjo", serif;
   font-size: 30px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.19;
-  letter-spacing: 0.39px;
-  text-align: left;
-  color: #616161;
-  display: inline-block;
 }
 .main__text-01 {
   font-size: 45px;
@@ -79,16 +73,11 @@
   color: #8064aa;
 }
 .main__text-02 {
-  font-size: 45px;
-  font-weight: 800;
-  letter-spacing: 0.68px;
+  @extend .main__text-01;
   color: #4a4a4a;
 }
 .main__text-03 {
-  font-size: 45px;
-  font-weight: 800;
-  letter-spacing: 0.68px;
-  color: #4a4a4a;
+  @extend .main__text-02;
   display: inline-block;
 }
 .main__bar {
@@ -101,11 +90,9 @@
   width: 185px;
   height: 345px;
   opacity: 0.42;
-  font-family: "Nanum Myeongjo", serif;
+  @include font();
   font-size: 300px;
   font-weight: 800;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.15;
   letter-spacing: 4.5px;
   text-align: left;
@@ -123,45 +110,25 @@
   position: absolute;
 }
 .main__dot-02 {
-  width: 17px;
-  height: 17px;
+  @extend .main__dot-01;
   margin: 10px 45px 100px 65px;
-  border-radius: 50%;
-  background-color: #384ea2;
-  display: inline-block;
-  position: absolute;
 }
 .main__text-04 {
   width: 600px;
   height: 115px;
   margin: 45px 193px 0 -60px;
-  font-family: "Nanum Myeongjo", serif;
+  @include font();
   font-size: 100px;
   font-weight: 800;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.15;
   letter-spacing: 1.5px;
-  text-align: left;
   color: #384ea2;
   display: inline-block;
   position: absolute;
 }
 .main__text-05 {
-  width: 600px;
-  height: 115px;
+  @extend .main__text-04;
   margin: 160px 193px 0 130px;
-  font-family: "Nanum Myeongjo", serif;
-  font-size: 100px;
-  font-weight: 800;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.15;
-  letter-spacing: 1.5px;
-  text-align: left;
-  color: #384ea2;
-  display: inline-block;
-  position: absolute;
 }
 .main__text__block-03 {
   margin: -50px 0px 0px 510px;
@@ -173,11 +140,8 @@
   width: 500px;
   height: 76px;
   margin: -200px 0 20px 1060px;
-  font-family: "Nanum Myeongjo", serif;
+  @include font();
   font-size: 27px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.67;
   letter-spacing: 0.41px;
   text-align: right;
@@ -197,11 +161,8 @@
 .main__button__text {
   width: 206px;
   height: 45px;
-  font-family: "Nanum Myeongjo", serif;
+  @include font();
   font-size: 40px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.13;
   letter-spacing: 0.6px;
   text-align: left;
@@ -231,109 +192,50 @@
   position: relative;
 }
 .circle-02 {
-  width: 185px;
-  height: 174px;
+  @extend .circle-01;
   margin: 0 0 0 -25px;
-  padding: 36px;
-  border-radius: 50%;
-  -webkit-backdrop-filter: opacity(24px);
-  backdrop-filter: opacity(24px);
-  border: solid 3px #384ea2;
-  text-align: center;
-  display: inline-block;
   position: absolute;
 }
 .circle-03 {
-  width: 185px;
-  height: 174px;
+  @extend .circle-02;
   margin: 0 0 0 213px;
-  padding: 36px;
-  border-radius: 50%;
-  -webkit-backdrop-filter: opacity(24px);
-  backdrop-filter: opacity(24px);
-  border: solid 3px #384ea2;
-  text-align: center;
-  display: inline-block;
-  position: absolute;
 }
 .circle-04 {
-  width: 185px;
-  height: 174px;
+  @extend .circle-02;
   margin: 0 0 0 452px;
-  padding: 36px;
-  border-radius: 50%;
-  -webkit-backdrop-filter: opacity(24px);
-  backdrop-filter: opacity(24px);
-  border: solid 3px #384ea2;
-  text-align: center;
-  display: inline-block;
-  position: absolute;
 }
 .circle__text__number-01 {
   width: 45px;
   height: 108px;
   margin: 0 60px 0px 60px;
+  @include font();
   font-family: Helvetica;
   font-size: 90px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.2;
   letter-spacing: 1.35px;
   text-align: center;
   color: #a1daec;
 }
 .circle__text__number-02 {
-  width: 45px;
-  height: 108px;
-  margin: 0 60px 0px 60px;
-  font-family: Helvetica;
-  font-size: 90px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: 1.35px;
-  text-align: center;
+  @extend .circle__text__number-01;
   color: #a1c7d8;
 }
 .circle__text__number-03 {
-  width: 45px;
-  height: 108px;
-  margin: 0 60px 0px 60px;
-  font-family: Helvetica;
-  font-size: 90px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: 1.35px;
-  text-align: center;
+  @extend .circle__text__number-01;
   color: #92a7d2;
 }
 .circle__text__number-04 {
-  width: 45px;
-  height: 108px;
-  margin: 0 60px 0px 60px;
-  font-family: Helvetica;
-  font-size: 90px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.2;
-  letter-spacing: 1.35px;
-  text-align: center;
+  @extend .circle__text__number-01;
   color: #384ea2;
 }
 .circle__text__subject {
   width: 90px;
   height: 59px;
   margin: -15px 0 0 0;
+  @include font();
   font-family: "Spoqa Han Sans Neo", "sans-serif";
   font-size: 47px;
   font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.26;
   letter-spacing: 1.65px;
   text-align: left;

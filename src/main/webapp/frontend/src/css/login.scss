@@ -5,6 +5,15 @@
     font-weight: normal;
     font-style: normal;
 }
+@mixin font()
+{
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-stretch: normal;
+    font-style: normal;
+    font-weight: bold;
+    text-align: left;
+    letter-spacing: normal;
+}
 body
 {
     overflow: hidden;
@@ -20,14 +29,12 @@ body
     width: 60px;
     height: 31px;
     margin: 36.1px 593px 33px 130px;
+    @include font();
     font-family: 'Nanum Myeongjo', serif;
     font-size: 27px;
     font-weight: 800;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.15;
     letter-spacing: 0.41px;
-    text-align: left;
     color: #4a4a4a;
     display: inline-block;
     }
@@ -37,14 +44,12 @@ body
     height: 61px;
     margin: 21.1px 0px 18px 250px;
     opacity: 0.74;
+    @include font();
     font-family: Helvetica;
     font-size: 50px;
     font-weight: 900;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.22;
     letter-spacing: 0.75px;
-    text-align: left;
     color: #384ea2;
     display: inline-block;
 }
@@ -53,14 +58,11 @@ body
     width: 90px;
     height: 31px;
     margin: 33px 158px 33px 589px;
+    @include font();
     font-family: 'Nanum Myeongjo', serif;
     font-size: 27px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.15;
     letter-spacing: 0.41px;
-    text-align: left;
     color: #4a4a4a;
     display: inline-block;
 }
@@ -84,14 +86,10 @@ body
     width: 121px;
     height: 61px;
     margin: 134px 327px 60px 327px;
-    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    @include font();
     font-size: 48px;
     font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.27;
-    letter-spacing: normal;
-    text-align: left;
     color: #4a4a4a;
     display:inline-block;
 }
@@ -99,21 +97,17 @@ body
 {
     margin: 0px 63px 8px 220px;
 }
-.ID__text
+.ID__text-01
 {
+    @include font();
     width: 25px;
     height: 31px;
-    font-family: 'SpoqaHanSansNeo-Regular', serif;
     font-size: 25px;
     font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.24;
-    letter-spacing: normal;
-    text-align: left;
     color: #5b5b5b;
 }
-.ID__input
+.ID__input-01
 {
     width: 324px;
     height: 48px;
@@ -124,17 +118,10 @@ body
 }
 .PW__text
 {
+    @extend .ID__text-01;
     width: 37px;
     height: 31px;
-    font-family: 'SpoqaHanSansNeo-Regular', serif;
-    font-size: 25px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.24;
     letter-spacing: -1.25px;
-    text-align: left;
-    color: #5b5b5b;
 }
 .login__block__button
 {
@@ -151,11 +138,9 @@ body
 {
     width: 75px;
     height: 31px;
-    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    @include font();
     font-size: 25px;
     font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.24;
     letter-spacing: 0.38px;
     text-align: center;
@@ -168,15 +153,11 @@ body
     width: 246px;
     height: 27px;
     margin: 0px 0 0 309px;
-    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    @include font();
     font-size: 22px;
     font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     text-decoration: underline;
     line-height: 1.23;
-    letter-spacing: normal;
-    text-align: left;
     color: #384ea2;
     display: inline-block;
 }
@@ -185,7 +166,7 @@ body
     width: 1145px;
     height: 782px;
     margin: 0px 0 0 775px;
-    background-image: url("../img/login.png");
+    background-image: url(../img/login.png);
     background-size: 1145px 782px;
     background-repeat: no-repeat;
 }
@@ -194,14 +175,11 @@ body
     width: 338px;
     height: 90px;
     margin: 51px 202px 6px 70px;
+    @include font();
     font-family: Helvetica;
     font-size: 77px;
     font-weight: 300;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.17;
-    letter-spacing: normal;
-    text-align: left;
     color: #4a4a4a;
     display: inline-block;
 }
@@ -210,14 +188,10 @@ body
     width: 540px;
     height: 62px;
     margin: 6px 0 495px 70px;
-    font-family: 'SpoqaHanSansNeo-Regular', serif;
-    font-size: 25px;
+    @include font();
     font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
+    font-size: 25px;
     line-height: 1.24;
-    letter-spacing: normal;
-    text-align: left;
     color: #4a4a4a;
     display:inline-block;
 }

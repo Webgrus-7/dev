@@ -11,6 +11,16 @@
     font-weight: normal;
     font-style: normal;
 }
+@mixin font()
+{
+    font-family: 'SpoqaHanSansNeo-Medium', serif;
+    font-weight: 500;
+    font-stretch: normal;
+    font-style: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: #4a4a4a;
+}
 .join__outer
 {
     overflow: hidden;
@@ -38,30 +48,19 @@
     width: 140px;
     height: 48px;
     margin: 0 0 0 4px;
-    font-family: 'SpoqaHanSansNeo-Medium', serif;
+    @include font();
     font-size: 38px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.26;
-    letter-spacing: normal;
-    text-align: left;
-    color: #4a4a4a;
 }
 .join__main__text
 {
     width: 600px;
     height: 69px;
     margin: 50px 453px 40px 560px;
+    @include font();
     font-family: 'SpoqaHanSansNeo-Regular', serif;
     font-size: 20px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.25;
-    letter-spacing: normal;
-    text-align: left;
-    color: #4a4a4a;
     display:inline-block;
 }
 .join__main__text-01
@@ -84,14 +83,9 @@
     width: 200px;
     height: 27px;
     margin: 0 201px 4px 80px;
-    font-family: 'SpoqaHanSansNeo-Medium', serif;
+    @include font();
     font-size: 22px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.23;
-    letter-spacing: normal;
-    text-align: left;
     color: #5b5b5b;
     display:inline-block;
 }
