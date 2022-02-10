@@ -1,4 +1,4 @@
-import "./css/header2.css";
+import "./css/header2.scss";
 import menu_q from "./img/menu_q.png";
 import { Link } from "react-router-dom";
 

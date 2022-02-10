@@ -1,6 +1,6 @@
 import Header1 from "./header"
 import Header2 from "./header2"
-import "./css/feed.css"
+import "./css/feed.scss"
 import { Link } from "react-router-dom";
 
 

@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/header.css";
+import "./css/header.scss";
 import pencil from "./img/makeQ.png";
 import { Link } from "react-router-dom";
 
