@@ -31,14 +31,6 @@
   margin-top: -10px;
 }
 .feed__text-05 {
-  font-family: "Nanum Myeongjo", serif;
-  font-size: 20px;
-  font-weight: 800;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.15;
-  letter-spacing: 0.41px;
-  color: #4a4a4a;
-  display: inline-block;
+  @extend .feed__text-04;
   margin-right: 13px;
 }

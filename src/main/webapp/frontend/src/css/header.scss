@@ -61,16 +61,8 @@ a {
   color: #4a4a4a;
 }
 .join__text {
+  @extend .login__text;
   margin: 0 31.5px 0 31.5px;
-  font-family: "Nanum Myeongjo", serif;
-  font-size: 20px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.15;
-  letter-spacing: 0.41px;
-  text-align: left;
-  color: #4a4a4a;
 }
 .makeQ {
   width: 200px;
@@ -94,14 +86,8 @@ a {
   margin-bottom: -3px;
 }
 .button__text {
+  @extend .login__text;
   margin: 0px 0px 0px 9px;
-  font-family: "Nanum Myeongjo", serif;
-  font-size: 20px;
-  font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.15;
-  letter-spacing: 0.41px;
   color: #f1f1f1;
   display: inline-block;
 }

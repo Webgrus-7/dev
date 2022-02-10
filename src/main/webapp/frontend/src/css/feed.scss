@@ -17,6 +17,16 @@
     font-weight: normal;
     font-style: normal;
 }
+@mixin font()
+{
+    font-family: 'Nanum Myeongjo', serif;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    text-align: left;
+    letter-spacing: normal;
+    color: #4a4a4a;
+}
 .feed__outer-01
 {
     overflow: hidden;
@@ -70,14 +80,11 @@
     width: 85px;
     height: 32px;
     margin: 135px 11px 0px 44px;
-    font-family: 'Nanum Myeongjo', serif;
+    @include font();
     font-size: 28px;
     font-weight: 800;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.14;
     letter-spacing: 0.42px;
-    text-align: left;
     color: #384ea2;
     display: inline-block;
 }
@@ -86,15 +93,10 @@
     width: 94px;
     height: 28px;
     margin: 10px 0 0 44px;
-    font-family: 'Nanum Myeongjo', serif;
+    @include font();
     font-size: 24px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.17;
     letter-spacing: 0.36px;
-    text-align: left;
-    color: #4a4a4a;
     display: inline-block;
 }
 .feed__profile__text-03
@@ -102,31 +104,20 @@
     width: 109px;
     height: 32px;
     margin: 35px 11px 10px 44px;
-    font-family: 'Nanum Myeongjo', serif;
+    @include font();
     font-size: 28px;
     font-weight: 800;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.14;
     letter-spacing: 0.42px;
-    text-align: left;
     color: #384ea2;
     display: inline-block;
 }
 .feed__profile__text-04
 {
+    @extend .feed__profile__text-02;
     width: 191px;
     height: 28px;
     margin: 10px 0 0px 44px;
-    font-family: 'Nanum Myeongjo', serif;
-    font-size: 24px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.17;
-    letter-spacing: 0.36px;
-    text-align: left;
-    color: #4a4a4a;
 }
 .feed__block-02
 {
@@ -147,14 +138,10 @@
     width: 52px;
     height: 94px;
     margin: 20px 191px 0 80px;
+    @include font();
     font-family: 'Vitro_core', serif;
     font-size: 80px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.14;
-    letter-spacing: normal;
-    text-align: left;
     color: #384ea2;
     display: inline-block;
     position: absolute;
@@ -164,15 +151,10 @@
     width: 260px;
     height: 28px;
     margin: 85px 0 0 80px;
-    font-family: 'Nanum Myeongjo', serif;
+    @include font();
     font-size: 25px;
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.12;
-    letter-spacing: normal;
-    text-align: left;
-    color: #4a4a4a;
     display:inline-block;
 }
 .feed__bar-03
@@ -189,14 +171,11 @@
     width: 95px;
     height: 35px;
     margin: 16px 109.8px 11px -392px;
-    font-family: 'Nanum Myeongjo', serif;
-    font-size: 30px;
+    @include font();
     font-weight: 800;
-    font-stretch: normal;
-    font-style: normal;
+    font-size: 30px;
     line-height: 1.17;
     letter-spacing: 0.45px;
-    text-align: left;
     color: #384ea2;
 }
 .feed__profile__text-07
@@ -204,15 +183,7 @@
     width: 95px;
     height: 35px;
     margin: 16px 109.8px 11px -22px;
-    font-family: 'Nanum Myeongjo', serif;
-    font-size: 30px;
-    font-weight: 800;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.17;
-    letter-spacing: 0.45px;
-    text-align: left;
-    color: #384ea2;
+    @extend .feed__profile__text-06;
 }
 .feed__bar-04
 {
@@ -228,30 +199,16 @@
     width: 38px;
     height: 26px;
     margin: 80px 157.8px 25px -386px;
-    font-family: 'Nanum Myeongjo', serif;
+    @include font();
     font-size: 23px;
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.13;
     letter-spacing: 0.35px;
-    text-align: left;
-    color: #4a4a4a;
 }
 .feed__profile__text-09
 {
-    width: 38px;
-    height: 26px;
+    @extend .feed__profile__text-08;
     margin: 80px 157.8px 25px -13px;
-    font-family: 'Nanum Myeongjo', serif;
-    font-size: 23px;
-    font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.13;
-    letter-spacing: 0.35px;
-    text-align: left;
-    color: #4a4a4a;
 }
 .feed__block-03
 {
@@ -268,37 +225,27 @@
 }
 .feed__profile__detail-02
 {
-    width: 273.2px;
-    height: 366.5px;
+    @extend .feed__profile__detail-01;
     margin: 62.5px 25.8px 0 5px;
-    box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.08);
-    border: solid 0.2px #d4d4d4;
-    background-color: #fefefd;
 }
 .feed__profile__detail__text-01
 {
     width: 231px;
     height: 69px;
     margin: 230.5px 26.4px 0 15.6px;
-    font-family: 'Nanum Myeongjo', serif;
-    font-size: 19px;
+    @include font();
     font-weight: 800;
-    font-stretch: normal;
-    font-style: normal;
+    font-size: 19px;
     line-height: 1.26;
     letter-spacing: 0.29px;
-    text-align: left;
     color: #141414;
     display: inline-block;
 }
 .feed__inner-02
 {
-    width: 1920px;
+    @extend .feed__inner-01;
     height: 1080px;
-    margin: 1px 0 0;
     padding: 93px 158px 93.4px 204px;
-    background-color: #fefefe;
-    display: flex;
 }
 .feed__table-01
 {
@@ -313,14 +260,11 @@
     width: 220px;
     height: 36px;
     margin: 0 75px 2px 0;
+    @include font();
     font-family: 'SpoqaHanSansNeo-Medium', serif;
     font-size: 29px;
     font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.24;
-    letter-spacing: normal;
-    text-align: left;
     color: #5b5b5b;
 }
 .feed__table__writer-01
@@ -328,30 +272,18 @@
     width: 55px;
     height: 23px;
     margin: 5px 0 0 0;
+    @include font();
     font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-weight: 800;
     font-size: 19px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.21;
-    letter-spacing: normal;
-    text-align: left;
     color: #4e4e4e;
     display: inline-block;
 }
 .feed__table__writer-02
 {
-    width: 52px;
-    height: 23px;
+    @extend .feed__table__writer-01;
     margin: 2px 21px 0 9px;
-    font-family: 'SpoqaHanSansNeo-Regular', serif;
-    font-size: 19px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.21;
-    letter-spacing: normal;
-    text-align: left;
     color: #848484;
 }
 .feed__table-02
@@ -375,11 +307,10 @@
 {
     width: 41px;
     height: 27px;
+    @include font();
     font-family: 'SpoqaHanSansNeo-Regular', serif;
     font-size: 22px;
     font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.23;
     letter-spacing: 0.33px;
     color: #384ea2;
@@ -414,33 +345,19 @@
 }
 .ddaom-02
 {
-    width: 52px;
-    height: 94px;
+    @extend .ddaom-01;
     margin: 250px 0px 0 -248px;
-    font-family: 'Vitro_core', serif;
-    font-size: 80px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.14;
-    letter-spacing: normal;
-    text-align: left;
-    color: #384ea2;
+    position: relative;
 }
 .feed__profile__text-010
 {
     width: 253px;
     height: 28px;
     margin: 310px 0 0 -50px;
-    font-family: 'Nanum Myeongjo', serif;
+    @include font();
     font-size: 25px;
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.12;
-    letter-spacing: normal;
-    text-align: left;
-    color: #4a4a4a;
 }
 .feed__bar-06
 {
@@ -455,14 +372,11 @@
     width: 85px;
     height: 32px;
     margin: 455px 11px 10px -33px;
-    font-family: 'Nanum Myeongjo', serif;
-    font-size: 28px;
+    @include font();
     font-weight: 800;
-    font-stretch: normal;
-    font-style: normal;
+    font-size: 28px;
     line-height: 1.14;
     letter-spacing: 0.42px;
-    text-align: left;
     color: #384ea2;
 }
 .feed__profile__text-012
@@ -470,15 +384,10 @@
     width: 95px;
     height: 28px;
     margin: 498px 0 0 -95px;
-    font-family: 'Nanum Myeongjo', serif;
+    @include font();
     font-size: 24px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.17;
     letter-spacing: 0.36px;
-    text-align: left;
-    color: #4a4a4a;
 }
 .feed__table-03
 {
@@ -491,14 +400,10 @@
 {
     width: 127px;
     height: 23px;
+    @include font();
     font-family: 'SpoqaHanSansNeo-Regular', serif;
     font-size: 19px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.21;
-    letter-spacing: normal;
-    text-align: left;
     color: #4e4e4e;
 }
 .feed__bar-07
@@ -515,14 +420,12 @@
     width: 53px;
     height: 35px;
     margin: 0 0 0 7px;
+    @include font();
     font-family: 'SpoqaHanSansNeo-Regular', serif;
     font-size: 28px;
     font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.25;
     letter-spacing: 0.42px;
-    text-align: left;
     color: #384ea2;
     display: inline-block;
 }
@@ -531,14 +434,10 @@
     width: 126px;
     height: 34px;
     margin: 80px 0 0 755px;
+    @include font();
     font-family: 'SpoqaHanSansNeo-Regular', serif;
     font-size: 27px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.26;
-    letter-spacing: normal;
-    text-align: left;
     color: #5b5b5b;
     display: inline-block;
 }
@@ -565,14 +464,11 @@
     width: 108px;
     height: 25px;
     margin: 215px 0 0 -370px;
-    font-family: 'Nanum Myeongjo', serif;
+    @include font();
     font-size: 22px;
     font-weight: 800;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.14;
     letter-spacing: 0.33px;
-    text-align: left;
     color: #384ea2;
     display: inline-block;
 }
@@ -581,31 +477,19 @@
     width: 111px;
     height: 26px;
     margin: 213px 0 19.5px 151.5px;
-    font-family: 'Nanum Myeongjo', serif;
+    @include font();
     font-size: 23px;
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.13;
     letter-spacing: 0.35px;
-    text-align: left;
-    color: #4a4a4a;
     display: inline-block;
 }
 .feed__table__text-06
 {
+    @extend .feed__table__text-05;
     width: 290px;
     height: 52px;
     margin: 260px 0 0 -370px;
-    font-family: 'Nanum Myeongjo', serif;
-    font-size: 23px;
-    font-weight: normal;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.13;
-    letter-spacing: 0.35px;
-    text-align: left;
-    color: #4a4a4a;
 }
 .feed__inner-03
 {
@@ -620,13 +504,11 @@
     width: 50px;
     height: 22px;
     margin: 0 187px 10px 50px;
+    @include font();
     font-family: 'SpoqaHanSansNeo-Regular', serif;
     font-size: 18px;
     font-weight: bold;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.22;
-    letter-spacing: normal;
     text-align: center;
     color: #384ea2;
     display: inline-block;
@@ -636,36 +518,22 @@
     width: 205px;
     height: 40px;
     margin: 0px 542px 0 59px;
+    @include font();
     position: relative;
     padding: 0 0 0 9px;
     border: solid 1.3px #b5b5b5;
     font-family: 'SpoqaHanSansNeo-Regular', serif;
     font-size: 20px;
     font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.25;
-    letter-spacing: normal;
-    text-align: left;
-    color: #4a4a4a;
 }
 .feed__question__input-02
 {
+    @extend .feed__question__input-01;
     width: 297px;
     height: 30px;
-    margin: 10px 0 17px;
-    padding: 8px 438.5px 7px 9px;
-    border: solid 1.3px #b5b5b5;
     margin: 0 0 0 59px;
-    font-family: 'SpoqaHanSansNeo-Regular', serif;
-    font-size: 20px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.25;
-    letter-spacing: normal;
-    text-align: left;
-    color: #4a4a4a;
+    padding: 8px 438.5px 7px 9px;
 }
 .feed__question__input-03
 {
@@ -685,76 +553,34 @@
     height: 27px;
     margin: 60px 0 0 252.9px;
     padding: 15px 39px 16px;
+    @include font();
     border-radius: 101px;
     border: solid 2px #384ea2;
     display: inline-block;
     font-family: 'SpoqaHanSansNeo-Regular', serif;
     font-size: 22px;
     font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
     line-height: 1.23;
     letter-spacing: 0.33px;
-    text-align: left;
     color: #384ea2;
 }
 .feed__question__button-01:hover
 {
-    width: 67px;
-    height: 27px;
-    margin: 60px 0 0 252.9px;
-    padding: 15px 39px 16px;
-    border-radius: 101px;
-    border: solid 2px #384ea2;
+    @extend .feed__question__button-01;
     background-color: #384ea2;
-    display: inline-block;
-    font-family: 'SpoqaHanSansNeo-Regular', serif;
-    font-size: 22px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.23;
-    letter-spacing: 0.33px;
-    text-align: left;
     color: #fff;
 }
 .feed__question__button-02
 {
+    @extend .feed__question__button-01;
     width: 45px;
-    height: 27px;
     margin: 0 0 0 20px;
     padding: 15px 50px 20px;
-    border-radius: 101px;
-    border: solid 2px #384ea2;
-    display: inline-block;
-    font-family: 'SpoqaHanSansNeo-Regular', serif;
-    font-size: 22px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.23;
-    letter-spacing: 0.33px;
-    text-align: left;
-    color: #384ea2;
 }
 .feed__question__button-02:hover
 {
-    width: 45px;
-    height: 27px;
-    margin: 0 0 0 20px;
-    padding: 15px 50px 20px;
-    border-radius: 101px;
-    border: solid 2px #384ea2;
+    @extend .feed__question__button-02;
     background-color: #384ea2;
     color: #fff;
     display: inline-block;
-    font-family: 'SpoqaHanSansNeo-Regular', serif;
-    font-size: 22px;
-    font-weight: 500;
-    font-stretch: normal;
-    font-style: normal;
-    line-height: 1.23;
-    letter-spacing: 0.33px;
-    text-align: left;
-    color: #fff;
 }
