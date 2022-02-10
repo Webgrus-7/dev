@@ -2,7 +2,7 @@ import Header_1 from "./header";
 import Header_2 from "./header2";
 import { useNavigate } from 'react-router-dom';
 import React, { useState } from "react";
-import "./css/join.css";
+import "./css/join.scss";
 import Register from "./img/register_title.png";
 
 function Join()
@@ -25,24 +25,24 @@ function Join()
                 <span className="join__block__text-03">
                     웹 서비스 이용과 회원 등록을 위해 아래의 내용을 입력해주세요.</span>
                 <div className="join__block-02">
-                    <span className="ID__text">아이디</span>
+                    <span className="ID__text-02">아이디</span>
                     <form>
-                        <input type="text" className="ID__input" onChange={(e)=>{setId(e.target.value)}}></input>
+                        <input type="text" className="ID__input-02" onChange={(e)=>{setId(e.target.value)}}></input>
                     </form>
-                    <span className="ID__text">비밀번호</span>
+                    <span className="ID__text-02">비밀번호</span>
                     <form>
-                        <input type="password" className="ID__input" onChange={(e)=>{setPw(e.target.value)}}></input>
+                        <input type="password" className="ID__input-02" onChange={(e)=>{setPw(e.target.value)}}></input>
                     </form>
-                    <span className="ID__text">비밀번호 확인</span>
+                    <span className="ID__text-02">비밀번호 확인</span>
                     <form>
-                        <input type="password" className="ID__input" onChange={(e)=>{setPwCheck(e.target.value)}}></input>
+                        <input type="password" className="ID__input-02" onChange={(e)=>{setPwCheck(e.target.value)}}></input>
                     </form>
-                    <span className="ID__text">닉네임</span>
+                    <span className="ID__text-02">닉네임</span>
                     <form>
-                        <input type="text" className="ID__input" onChange={(e)=>{setNickName(e.target.value)}}></input>
+                        <input type="text" className="ID__input-02" onChange={(e)=>{setNickName(e.target.value)}}></input>
                     </form>
                     <div className="join__block__button-01">
-                        <span className="join__block__button__text" userID={userID} password={password} nickname={nickname} onClick={()=>{check()}}>다음</span>
+                        <span className="join__block__button__text" onClick={()=>{check()}}>다음</span>
                     </div>
                 </div>
             </div>
