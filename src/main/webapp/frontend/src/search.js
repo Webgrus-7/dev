@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/search.css";
+import "./css/search.scss";
 import Header1 from "./header";
 import Header2 from "./header2";
 import searchbttn from "./img/searchbttn.png";

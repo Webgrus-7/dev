@@ -1,5 +1,13 @@
 @import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+@mixin font()
+{
+  font-family: "Nanum Myeongjo", serif;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  text-align: left;
+}
 body {
   overflow-x: hidden;
 }
@@ -13,13 +21,13 @@ body {
   height: 900px;
   padding-left: 60px;
   padding-right: 60px;
-}
-.myfeed .info {
-  width: 90%;
-  margin-top: 35px;
-  flex: 33%;
-  border-right: rgba(185, 185, 185, 0.438);
-  border-right-style: dotted;
+  .info {
+    width: 90%;
+    margin-top: 35px;
+    flex: 33%;
+    border-right: rgba(185, 185, 185, 0.438);
+    border-right-style: dotted;
+  }
 }
 .myfeed :last-child {
   border-right: none;
@@ -31,14 +39,10 @@ body {
   background-color: #4a4a4a;
 }
 .info_title {
-  font-family: NanumMyeongjo;
+  @include font();
   font-size: 20px;
-  font-weight: 800;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.13;
   letter-spacing: 0.23px;
-  text-align: left;
   color: #384ea2;
   margin-left: 10px;
 }
@@ -49,16 +53,8 @@ body {
   margin-top: 10px;
 }
 .info_num {
-  font-family: NanumMyeongjo;
-  font-size: 20px;
-  font-weight: 800;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.13;
-  letter-spacing: 0.23px;
-  text-align: left;
+  @extend .info_title;
   color: #5b5b5b;
-  margin-left: 10px;
 }
 
 /*문제박스들*/
@@ -76,26 +72,19 @@ body {
   display: inline-block;
 }
 .feed_box_title {
-  font-family: NanumMyeongjo;
+  @include font();
   font-size: 17px;
-  font-weight: 800;
   height: 110px; /*제목길이 상관없이 일정하게 칸 유지*/
-  font-stretch: normal;
-  font-style: normal;
   letter-spacing: 0.39px;
-  text-align: left;
   color: #141414;
   line-height: 1.27;
 }
 .feed_box_by {
-  font-family: NanumMyeongjo;
+  @include font();
   font-size: 14px;
   font-weight: 700;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 2;
   letter-spacing: 0.3px;
-  text-align: left;
   color: #4a4a4a;
   margin-top: 2px;
 }
@@ -104,14 +93,11 @@ body {
 }
 /*해시태그*/
 .feed_hashtag {
-  font-family: NanumMyeongjo;
+  @include font();
   font-size: 13px;
   font-weight: 700;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.47;
   letter-spacing: 0.29px;
-  text-align: left;
   color: #5b5b5b;
   margin-top: 40px;
   margin-bottom: 20px;
@@ -130,14 +116,10 @@ body {
   margin-bottom: 5.8px;
 }
 .feed_infoName {
-  font-family: NanumMyeongjo;
+  @include font();
   font-size: 11px;
-  font-weight: 800;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.13;
   letter-spacing: 0.23px;
-  text-align: left;
   color: #384ea2;
   display: flex;
   justify-content: space-between;
@@ -153,15 +135,6 @@ body {
   margin-top: 5.8px;
 }
 .feed_infoData {
-  font-family: NanumMyeongjo;
-  font-size: 11px;
-  font-weight: 800;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.13;
-  letter-spacing: 0.23px;
-  text-align: left;
+  @extend .feed_infoName;
   color: #5b5b5b;
-  display: flex;
-  justify-content: space-between;
 }
