@@ -1,5 +1,14 @@
 @import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+@mixin font()
+{
+  font-family: "Nanum Myeongjo", serif;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  text-align: left;
+  letter-spacing: normal;
+}
 body {
   overflow-x: hidden;
 }
@@ -15,13 +24,11 @@ body {
   display: flex; /*넣어줘야 수평 맞음*/
 }
 .sort_title {
+  @include font();
   font-family: "SpoqaHanSansNeo-Regular", serif;
   font-size: 18px;
   font-weight: bold;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.22;
-  letter-spacing: normal;
   text-align: center;
   color: #384ea2;
   margin-top: 7px;
@@ -32,14 +39,11 @@ body {
   margin: 0px 60px 0 20px;
   padding: 0 0 2px 9px;
   border: solid 1.3px #b5b5b5;
+  @include font();
   font-family: "SpoqaHanSansNeo-Regular", serif;
   font-size: 17px;
   font-weight: 500;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.25;
-  letter-spacing: normal;
-  text-align: left;
   color: #4a4a4a;
 }
 .searchbttn {
@@ -70,26 +74,19 @@ body {
   display: inline-block;
 }
 .box_title {
-  font-family: NanumMyeongjo;
+  @include font();
   font-size: 21px;
-  font-weight: 800;
   height: 150px; /*제목길이 상관없이 일정하게 칸 유지*/
-  font-stretch: normal;
-  font-style: normal;
   letter-spacing: 0.39px;
-  text-align: left;
   color: #141414;
   line-height: 1.27;
 }
 .box_by {
-  font-family: NanumMyeongjo;
+  @include font();
   font-size: 17px;
   font-weight: 700;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 2;
   letter-spacing: 0.3px;
-  text-align: left;
   color: #4a4a4a;
   margin-top: 2px;
 }
@@ -98,14 +95,11 @@ body {
 }
 /*해시태그*/
 .hashtag {
-  font-family: NanumMyeongjo;
+  @include font();
   font-size: 15px;
   font-weight: 700;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.47;
   letter-spacing: 0.29px;
-  text-align: left;
   color: #5b5b5b;
   margin-top: 60px;
 }
@@ -123,14 +117,10 @@ body {
   margin-bottom: 5.8px;
 }
 .infoName {
-  font-family: NanumMyeongjo;
+  @include font();
   font-size: 14px;
-  font-weight: 800;
-  font-stretch: normal;
-  font-style: normal;
   line-height: 1.13;
   letter-spacing: 0.23px;
-  text-align: left;
   color: #384ea2;
   display: flex;
   justify-content: space-between;
@@ -148,15 +138,6 @@ body {
   margin-top: 5.8px;
 }
 .infoData {
-  font-family: NanumMyeongjo;
-  font-size: 15px;
-  font-weight: 800;
-  font-stretch: normal;
-  font-style: normal;
-  line-height: 1.13;
-  letter-spacing: 0.23px;
-  text-align: left;
+  @extend .infoName;
   color: #5b5b5b;
-  display: flex;
-  justify-content: space-between;
 }

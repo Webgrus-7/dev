@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "./header";
 import Header2 from "./header2";
-import "./css/main2.css";
+import "./css/main2.scss";
 import main2book from "./img/main2book.png";
 import ddaom1 from "./img/ddaom1.png";
 import main2heart from "./img/main2heart.png";

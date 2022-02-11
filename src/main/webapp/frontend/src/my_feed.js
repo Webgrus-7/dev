@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/my_feed.css";
+import "./css/my_feed.scss";
 import Header from "./header";
 import Header2 from "./header2";
 
