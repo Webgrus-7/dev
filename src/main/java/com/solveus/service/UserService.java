@@ -1,28 +1,35 @@
 package com.solveus.service;
 
+import com.solveus.domain.dto.LoginDto;
+import com.solveus.domain.dto.TokenResponse;
 import com.solveus.domain.dto.UserDto;
+import com.solveus.domain.entity.Auth;
 import com.solveus.domain.entity.User;
+import com.solveus.domain.repository.AuthRepository;
 import com.solveus.domain.repository.UserRepository;
 import com.solveus.exception.ErrorCode;
 import com.solveus.exception.UserIDDuplicateException;
-import org.springframework.beans.factory.annotation.Autowired;
+import com.solveus.security.JwtProvider;
+import io.jsonwebtoken.Claims;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.transaction.Transactional;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Service
+@RequiredArgsConstructor
+@Slf4j
 public class UserService {
-    @Autowired
-    private UserRepository userRepository;
+    private final UserRepository userRepository;
+    private final AuthRepository authRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final SaltUtil saltUtil;
+    private final JwtProvider jwtProvider;
 
-    @Autowired
-    private PasswordEncoder passwordEncoder;
-
-    @Autowired
-    private SaltUtil saltUtil;
 
     @Transactional
     public List<UserDto> getAllUser() {
@@ -46,7 +53,8 @@ public class UserService {
 
     @Transactional
     public UserDto getUserByUserID(String userID) {
-        User user = userRepository.findByUserID(userID);
+        User user = userRepository.findByUserID(userID)
+                .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 회원입니다."));
 
         UserDto userDto = UserDto.builder()
                 .id(user.getId())
@@ -61,18 +69,12 @@ public class UserService {
         return userDto;
     }
 
-    @Transactional
-    public User save(User value) {
-        User alreadyUser = userRepository.findByUserID(value.getUserID());
-        if(alreadyUser!= null){
-            throw new UserIDDuplicateException("UserID duplicated", ErrorCode.USERID_DUPLICATION);
-        }
-        String password = value.getPassword();
-        String salt= saltUtil.genSalt();
-        value.setSalt(salt);
-        value.setPassword(saltUtil.encodePassword(salt, password));
 
-        return userRepository.save(value);
+    // 비밀번호 확인
+    @Transactional
+    public boolean passwordCheck(User user, String password){
+        return passwordEncoder.matches(password, user.getPassword());
     }
+
 
 }

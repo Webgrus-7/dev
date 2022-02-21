@@ -34,10 +34,9 @@ public class UserTest {
                 .intro("sid")
                 .build();
 
-        User alreadyUser = userRepository.findByUserID(user.getUserID());
-        if(alreadyUser!= null){
-            throw new UserIDDuplicateException("userID duplicated", ErrorCode.USERID_DUPLICATION);
-        }
+        User alreadyUser = userRepository.findByUserID(user.getUserID())
+                .orElseThrow(()-> new UserIDDuplicateException("userID duplicated", ErrorCode.USERID_DUPLICATION));
+
         String password = user.getPassword();
         String salt= saltUtil.genSalt();
         user.setSalt(salt);
@@ -47,4 +46,5 @@ public class UserTest {
         userRepository.save(user);
 
     }
+
 }

@@ -59,7 +59,7 @@ function Join2()
         </div>
     );
     function register() {
-        return axios.post("/user/local/new",{
+        return axios.post("/auth/join",{
             userID,
             email,
             phone,

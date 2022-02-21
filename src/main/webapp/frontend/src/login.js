@@ -1,10 +1,17 @@
 import Header from "./header";
 import Header2 from "./header2";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import React, { useState } from "react";
+import axios from 'axios';
 import "./css/login.scss";
+
+axios.defaults.withCredentials = true;
 
 function Login()
 {
+    const navigate = useNavigate();
+    let [userID, setID] = useState("");
+    let [password, setPW] = useState("");
     let text = ["web test는 어쩌고 저쩌고...아직 못 정함",<br />,
     "기반으로 한 공부하는 모두를 위한 공유 스터디서비스"]
     return (
@@ -16,15 +23,15 @@ function Login()
                 <div className="login__block-02">
                     <span className="ID__text-01">ID</span>
                     <form>
-                        <input type="text" className="ID__input-01"></input>
+                        <input type="text" className="ID__input-01" onChange={(e)=>{setID(e.target.value)}}></input>
                     </form>
                     <span className="PW__text">PW</span>
                     <form>
-                        <input type="password" className="ID__input-01"></input>
+                        <input type="password" className="ID__input-01" onChange={(e)=>{setPW(e.target.value)}}></input>
                     </form>
                 </div>
                 <div className="login__block__button">
-                    <span className="login__block__button__text">로그인</span>
+                    <span className="login__block__button__text" onClick={()=>{check(); onLogin()}}>로그인</span>
                 </div>
                 <Link to="/join1">
                     <span className="login__block__text-02">가치풀자가 처음이신가요?</span>
@@ -36,5 +43,57 @@ function Login()
             </div>
         </div>
     );
+    function check()
+    {
+        if(userID==="")
+        {
+            alert("아이디를 입력해주세요.");
+        }
+        else if(password==="")
+        {
+            alert("비밀번호를 입력해주세요.");
+        }
+    }
+    function onLogin()
+    {
+        const JWT_EXPIRY_TIME = 24 * 3600 * 1000;
+        return (
+            axios.post('/auth/login',
+            {
+                password,
+                userID
+            },
+            ).then(response => {
+                if(response.data === "존재하지 않는 회원입니다.")
+                {
+                    alert(response.data);
+                }
+                else
+                {
+                    const accessToken = response.data;
+                    // API 요청하는 콜마다 헤더에 accessToken, refreshToken 담아 보내도록 설정
+                    axios.defaults.headers.common['ACCESS_TOKEN'] = accessToken.access_TOKEN;
+                    axios.defaults.headers.common['REFRESH_TOKEN'] = accessToken.refresh_TOKEN;
+                    // 일정시간 지날 때마다 accessToken 재발급 함수 호출
+                    setTimeout(refresh, JWT_EXPIRY_TIME - 60000);
+                    navigate('/');
+                    console.log(response);
+                }
+            })
+        );
+    }
+    function refresh()
+    {
+        const JWT_EXPIRY_TIME = 24 * 3600 * 1000;
+        return (
+            axios.post('/auth/accessToken').then(response=>{
+                console.log(response);
+                 // 일정시간 지날 때마다 accessToken 재발급 함수 호출
+                setTimeout(refresh, JWT_EXPIRY_TIME - 60000);
+            })
+        );
+    }
+    
 }
+
 export default Login
