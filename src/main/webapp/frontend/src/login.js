@@ -21,12 +21,10 @@ function Login()
             <div className="login__block-01">
                 <span className="login__block__text-01">log in</span>
                 <div className="login__block-02">
-                    <span className="ID__text-01">ID</span>
-                    <form>
+                    <form onKeyPress={(e)=>{EnterKey(e)}}>
+                        <div><span className="ID__text-01">ID</span></div>
                         <input type="text" className="ID__input-01" onChange={(e)=>{setID(e.target.value)}}></input>
-                    </form>
-                    <span className="PW__text">PW</span>
-                    <form>
+                        <div><span className="PW__text">PW</span></div>
                         <input type="password" className="ID__input-01" onChange={(e)=>{setPW(e.target.value)}}></input>
                     </form>
                 </div>
@@ -43,6 +41,14 @@ function Login()
             </div>
         </div>
     );
+    function EnterKey(e)
+    {
+        if(e.key==='Enter')
+        {
+            check();
+            onLogin();
+        }
+    }
     function check()
     {
         if(userID==="")
