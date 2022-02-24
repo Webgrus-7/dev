@@ -2,6 +2,7 @@ import Header from "./header";
 import Header2 from "./header2";
 import { Link, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import axios from 'axios';
 import "./css/login.scss";
 
@@ -12,6 +13,7 @@ function Login()
     const navigate = useNavigate();
     let [userID, setID] = useState("");
     let [password, setPW] = useState("");
+    let dispatch = useDispatch();
     let text = ["web test는 어쩌고 저쩌고...아직 못 정함",<br />,
     "기반으로 한 공부하는 모두를 위한 공유 스터디서비스"]
     return (
@@ -82,8 +84,8 @@ function Login()
                     axios.defaults.headers.common['REFRESH_TOKEN'] = accessToken.refresh_TOKEN;
                     // 일정시간 지날 때마다 accessToken 재발급 함수 호출
                     setTimeout(refresh, JWT_EXPIRY_TIME - 60000);
+                    dispatch({type:"login"});//redux의 로그인 상태변경 함수 호출
                     navigate('/');
-                    console.log(response);
                 }
             })
         );
@@ -99,7 +101,6 @@ function Login()
             })
         );
     }
-    
 }
 
 export default Login

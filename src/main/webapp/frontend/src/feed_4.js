@@ -4,7 +4,7 @@ import "./css/feed.scss"
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
-function feed()
+function Feed()
 {
     return (
         <div className="feed__outer-01" style={{overflow: 'scroll'}}>
@@ -62,4 +62,4 @@ function feed()
         </div>
     );
 }
-export default feed;
+export default Feed;

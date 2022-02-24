@@ -2,8 +2,10 @@ import React from "react";
 import "./css/header.scss";
 import pencil from "./img/makeQ.png";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
-function header() {
+function Header() {
+  let isLogin = useSelector((state)=>state);
   return (
     <div className="header">
       <Link to="/">
@@ -11,9 +13,13 @@ function header() {
       </Link>
       <div className="menu">
         <div className="login">
-          <Link to="/login">
-            <span className="login__text">로그인</span>
-          </Link>
+          {//login 상태면 로그아웃을 표시하고, login 상태가 아니면 로그인을 표시함.
+            isLogin===true
+            ? <span className="login__text">로그아웃</span>
+            : <Link to="/login">
+                <span className="login__text">로그인</span>
+              </Link>
+          }
           <div className="bar"></div>
           <Link to="/join1">
             <span className="join__text">회원가입</span>
@@ -29,4 +35,4 @@ function header() {
     </div>
   );
 }
-export default header;
+export default Header;
