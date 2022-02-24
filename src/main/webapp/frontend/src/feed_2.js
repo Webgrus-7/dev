@@ -3,7 +3,7 @@ import Header2 from "./header2"
 import "./css/feed.scss"
 import profile from "./img/profile.png"
 import { Link } from "react-router-dom";
-function feed()
+function Feed()
 {
     return (
         <div className="feed__outer-01">
@@ -39,4 +39,4 @@ function feed()
         </div>
     );
 }
-export default feed;
+export default Feed;

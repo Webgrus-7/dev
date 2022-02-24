@@ -2,7 +2,7 @@ import "./css/header2.scss";
 import menu_q from "./img/menu_q.png";
 import { Link } from "react-router-dom";
 
-function header2() {
+function Header2() {
   return (
     <div className="login__outer-02">
       <div className="menu-02">
@@ -19,4 +19,4 @@ function header2() {
     </div>
   );
 }
-export default header2;
+export default Header2;
