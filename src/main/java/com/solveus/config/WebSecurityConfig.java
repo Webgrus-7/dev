@@ -44,11 +44,13 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .httpBasic().disable()
+                .cors().and()
                 .csrf().disable()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)// JWT 토큰 기반 -> 세션 사용 X
                 .and()
                 .authorizeRequests()//사용 권한 체크\
-                .antMatchers("/auth/**").permitAll()
+                .antMatchers("/auth/**", "/problem/all")
+                .permitAll()
                 .anyRequest().authenticated()
                 //JwtAuthenFilter를 UsernamePasswordAuthFilter 전에 넣는다.(항상)
                 .and()

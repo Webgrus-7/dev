@@ -18,7 +18,7 @@ public enum ErrorCode {
     INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "내부 서버 오류입니다."),
 
     // 아이디 중복
-    USERID_DUPLICATION(HttpStatus.BAD_REQUEST, "아이가 중복되었습니다.")
+    USERID_DUPLICATION(HttpStatus.BAD_REQUEST, "아이디가 중복되었습니다.")
     ;
 
     private final HttpStatus status;

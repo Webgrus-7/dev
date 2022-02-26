@@ -59,6 +59,10 @@ public class User implements UserDetails {
     @LastModifiedDate
     private LocalDateTime updated;
 
+    @OneToMany(mappedBy = "creator_id")
+    private List<Static> problems = new ArrayList<Static>();
+
+
 
     @Builder
     public User(Long id,String userID, String email, String phone, String password, String nickname, String major, String intro, String salt) {

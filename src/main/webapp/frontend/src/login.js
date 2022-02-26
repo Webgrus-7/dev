@@ -72,7 +72,7 @@ function Login()
                 userID
             },
             ).then(response => {
-                if(response.data === "존재하지 않는 회원입니다.")
+                if(response.data === "존재하지 않는 회원입니다." || response.data === "비밀번호가 일치하지 않습니다.")
                 {
                     alert(response.data);
                 }
