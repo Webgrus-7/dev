@@ -5,9 +5,10 @@ import ddaom from "./img/ddaom1.png";
 import arrow from "./img/arrow.png";
 import { Link } from "react-router-dom";
 function Main() {
-    let text_01 = ["나만의 공부메이트, 가치풀자와 함께해요.",<br/>,
-        "가치풀자와 차근차근 함께 성장할 수 있어요."]
-    let text_02 = ["가치풀자면 충분해!",<br/>,"가치풀자로 정보공유와 풀이 Q&A까지."]
+    let text_01 = ["나만의 공부메이트와 함께해요.",<br/>]
+    let text_02 = ["가치풀자와 차근차근 함께 성장할 수 있어요."]
+    let text_03 = ["가치풀자면 충분해!",<br/>,"가치풀자로 정보공유와 풀이 Q&A까지."]
+    let text_04 = ["끝.",<br/>]
     return (
         <div className="main" style={{overflowY: 'scroll'}}>
             <Header />
@@ -18,12 +19,19 @@ function Main() {
                 </div>
                 <div className="main__text__block-01">
                     <span className="main__text-01">보영</span>
-                    <span className="main__text-02">님,</span>
-                    <span className="main__text-03">이제 혼자하는 공부는 끝.</span>
+                    <span className="main__text-02">님,<br/></span>
+                    <span className="main__text-03">이제 혼자하는 공부는 </span>
+                    <span className="main__text-03-1"> &nbsp; {text_04}</span>
                 </div>
                 <div className="main__bar"></div>
                 <div className="main__text__block-02">
-                    <span>{text_01}</span>
+                    <span>{text_04}<br/></span>
+                    <span>{text_01}<br/></span>
+                    <span>{text_02}</span>
+                </div>
+                <div className="mobile-button">
+                    <div className="button__text-01">가치풀자와 함께하고 싶다면?</div>
+                    <div className="button__text-02">문제 풀러가기</div>
                 </div>
             </div>
             <div className="main-02">
@@ -33,7 +41,7 @@ function Main() {
                 <span className="main__text-04">영어부터</span>
                 <span className="main__text-05">전공까지</span>
                 <div className="main__text__block-04">
-                <span className="main__text-06">{text_02}</span>
+                <span className="main__text-06">{text_03}</span>
                 </div>
                 <Link to="/main2">
                 <div className="main__button">
@@ -58,6 +66,7 @@ function Main() {
                 </div>
                 <img className="arrow" src={arrow}></img>
             </div>
+
         </div>
         
     );
