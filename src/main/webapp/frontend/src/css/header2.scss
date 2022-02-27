@@ -34,3 +34,29 @@
   @extend .feed__text-04;
   margin-right: 13px;
 }
+
+/*반응형*/
+@media (max-width: 767px) {
+  .login__outer-02 {
+    height: 55px;
+  }
+  .feed__text-04 {
+    font-family: "Nanum Myeongjo", serif;
+    font-size: 12px;
+    margin-left: 3%;
+    width:50px;
+  }
+  .menu-02 {
+    padding: 20px;
+}
+.q{
+  width: 28px;
+  height: 28px;
+  opacity: 0.74;
+  display: inline-block;
+  margin-top: -4px;
+}
+.feed__text-05 {
+  margin-right: 0px;
+}
+}

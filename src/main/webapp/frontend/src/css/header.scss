@@ -18,8 +18,9 @@ body {
   backdrop-filter: blur(30px);
   box-shadow: 6px 6px 6px 0 rgba(126, 126, 126, 0.16);
   background-color: #efefef;
-  display: flex;
-  justify-content: space-between;
+  display: flex;/*header포함하는 전체 화면 사이즈 지정한 css(ex. main)에서 모바일 버전 width 100%, height 100% 지정해주어야
+  화면 사이즈에 맞추어 적용됨 -> x경우 : width:1080에 맞추어 오른쪽 버튼 스크롤 해야 보임!*/
+  justify-content: space-between;/*?*/
 }
 .title {
   width: 200px;
@@ -90,4 +91,59 @@ a {
   margin: 0px 0px 0px 9px;
   color: #f1f1f1;
   display: inline-block;
+}
+
+/*반응형*/
+@media (max-width: 767px) {
+  .header {
+    width: 100%; /*ㅅㅈ*/
+    height: 65px;
+  }
+  .title {
+    font-size: 20px;
+    display: inline-block;
+    margin-left: 12%; /**/
+    margin-top: 11.5%;
+  }
+  .menu {
+    margin-top: 19px;
+    margin-left:-12% ;
+  }
+  .login {
+    margin-top: 2px;
+    width:123px;
+
+  }
+  .login__text {
+  margin: 0 12px 0 0;
+  font-size: 12px;
+  }
+  .join__text {
+  margin: 0 12px 0 10px;
+}
+.makeQ {
+  width: 110px;
+  height: 32px;
+  border-radius: 8px;
+  padding-bottom: 7px;
+}
+.button__img {
+  width: 10px;
+  height: 10px;
+  margin: 5px 0px -2px 0;
+}
+.bar {
+  width: 1.38px;
+  background-color: #b4b4b4;
+  height: 13px;
+  display: inline-block;
+  margin-bottom: -3px;
+}
+.button__text {
+  margin: 0px 0px 0px 9px;
+  color: #f1f1f1;
+  font-size: 11px;
+  display: inline-block;
+  margin-top: 7px;
+}
 }

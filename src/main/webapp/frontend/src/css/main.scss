@@ -1,12 +1,12 @@
+@import url(//db.onlinewebfonts.com/c/d87bc93ce13d8967fcd01755292938b2?family=HelveticaNeue+MediumExt);
 @import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
-@import url(//db.onlinewebfonts.com/c/d87bc93ce13d8967fcd01755292938b2?family=HelveticaNeue+MediumExt);
 @mixin font()
 {
   font-family: "Nanum Myeongjo", serif;
+  font-weight: 800;
   font-stretch: normal;
-  font-style: normal;
-  font-weight: bold;
+  text-align: left;
 }
 .main {
   width: 1920px;
@@ -66,6 +66,7 @@
   width: 700px;
   font-size: 30px;
 }
+
 .main__text-01 {
   font-size: 45px;
   font-weight: 800;
@@ -80,6 +81,11 @@
   @extend .main__text-02;
   display: inline-block;
 }
+.main__text-03-1{
+  @extend .main__text-02;
+  display: inline-block;
+}
+
 .main__bar {
   width: 0px;
   height: 151px;
@@ -249,4 +255,111 @@
   opacity: 0.61;
   position: absolute;
   display: inline-block;
+}
+@media (min-width: 767px){
+  .mobile-button{
+    display:none;
+  }
+  .main__text__block-02 :first-child{
+    display: none;
+  }
+}
+
+
+/*반응형*/
+@media (max-width: 767px) {
+  .main{
+    width: 100%;
+    position: relative;
+  }
+  .main-01 {
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    margin-top: 0px;
+    background-image: url(../img/media_background.png);
+  }
+  .main-02{
+    display: none;
+  }
+  .main__img{
+    display:none;
+  }
+  .main__ddaom {
+    /*margin: 40.1px 0 0px 39px;
+    width:35px;
+    height: 3px;
+    display: inline-block;*/
+    display: none;
+  }
+
+  .main__text__block-01 {
+    font-family: 'SpoqaHanSansNeo-Regular';
+    width: auto;
+    height: auto;
+    margin: 40px 0px 0px 40px;
+    line-height: 36px;
+  }
+  .main__text__block-02 {
+    font-family: 'SpoqaHanSansNeo-Regular';
+    width: 80%;
+    height: auto;
+    font-size: 20px;
+    letter-spacing: 3px;
+    margin-top: 14px;
+    line-height: 22px;
+  }
+
+  .main__text__block-02 :last-child{
+    display: none;
+  }
+  .main__text-01 {
+    font-size: 27px;
+  }
+  .main__text-03-1{
+    display: none;
+  }
+  .main__bar {
+    width: 0px;
+    height: 120px;
+    border: solid 0.1px #929292;
+    margin: 17px 0px 0px 43px;
+  }
+  .mobile-button{
+    @include font();
+    font-family: 'SpoqaHanSansNeo-Regular';
+  }
+  .button__text-01{
+    font-size: 14px;
+    width:190px;
+    margin: 0 auto; /*가운데정렬*/
+    margin-top: 160px;
+    color: #654b8d;
+  }
+  .button__text-02{
+    font-family: 'SpoqaHanSansNeo-Regular';
+    animation-name: slid-up;
+    animation-duration: 1.3s;
+    font-size: 18px;
+    transition: 0.3s all;
+    display:inline-block;
+    position: relative;
+    color:rgb(243, 243, 243);
+    margin-top: 20px;
+    margin-left: 33%;/*수정?*/
+    letter-spacing: 1px;
+  }
+  .button__text-02::after {
+    position: absolute;
+    width: 172px;
+    height: 54px;
+    content: "";
+    background: #654b8d;
+    border-radius: 35px;
+    transition: 0.3s all;
+    left:-32px;
+    top:-14px;
+    z-index: -1;
+  }
 }
