@@ -513,6 +513,22 @@
     color: #384ea2;
     display: inline-block;
 }
+.feed__question__text-02
+{
+    margin: 0 0 0 10px;
+    @include font();
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-size: 14px;
+    color: #5d5d5d;
+}
+li
+{
+    @include font();
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #5d5d5d;
+}
 .feed__question__input-01
 {
     width: 205px;
