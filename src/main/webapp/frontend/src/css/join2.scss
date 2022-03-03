@@ -109,3 +109,80 @@
     display: table;
     text-decoration-line: none;
 }
+
+/*반응형*/
+@media (max-width: 1919px) {
+
+    .join2__outer{
+        width: 100%;
+        position: relative;
+    }
+    .join__block-04{
+        width: 100%;
+        height: 100%;
+        margin: 0px 0 0px;
+        padding: 0 0 0px;
+        text-align: center;/**/
+    
+    }
+    .join__img-02{
+        width: 31px;
+        height: 31px;
+        margin: 70px 1px -5px 0px;
+    }
+    .join__block__text-06
+{
+    width: 140px;
+    height: auto;
+    margin: 0 0 0 4px;
+    font-size: 27px;
+    
+}
+.join__main__text
+{
+    width: auto;
+    height: 69px;
+    margin: 50px 0px 0px 0px;
+    font-size: 16px;
+}
+.join__main__text-01
+{
+    width: 179px;
+    height: auto;
+    margin: 0px 0px 0 0px;
+    font-size: 21px;
+
+}
+.join__main__text-02
+{
+    font-size: 21px;
+}
+.EMAIL__text
+{
+    width: 170px;/**/
+    height: auto;
+    margin: 0 120px 0px 0px;
+    font-size: 17px;
+    display:inline-block;
+}
+.EMAIL__input
+{
+    width: 220px;
+    height: 34px;
+    margin: 4px 0 11px -60px;
+    padding: 0 0 0 10px;
+    background-color: #efefef;
+    border: 0px;
+}
+.join__block__button-02
+{
+    width: 30px;
+    height: 17px;
+    margin: 50px 0px 0px 110px;
+    padding: 8px 40px 17px;
+    border-radius: 101px;
+    border: solid 2px #384ea2;
+    display: inline-block;/**/
+}
+
+}
