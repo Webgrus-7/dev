@@ -329,37 +329,28 @@
   .mobile-button{
     @include font();
     font-family: 'SpoqaHanSansNeo-Regular';
+    width: 190px;
+    margin: 0 auto;
   }
   .button__text-01{
     font-size: 14px;
     width:190px;
-    margin: 0 auto; /*가운데정렬*/
-    margin-top: 160px;
+    margin: 160px 0 5px 10px;
     color: #654b8d;
+    display: block;
   }
   .button__text-02{
-    font-family: 'SpoqaHanSansNeo-Regular';
-    animation-name: slid-up;
-    animation-duration: 1.3s;
     font-size: 18px;
-    transition: 0.3s all;
-    display:inline-block;
-    position: relative;
     color:rgb(243, 243, 243);
-    margin-top: 20px;
-    margin-left: 33%;/*수정?*/
-    letter-spacing: 1px;
-  }
-  .button__text-02::after {
-    position: absolute;
     width: 172px;
     height: 54px;
-    content: "";
-    background: #654b8d;
+    padding: 10px 0 0 10px;
     border-radius: 35px;
-    transition: 0.3s all;
-    left:-32px;
-    top:-14px;
-    z-index: -1;
+    letter-spacing: 1px;
+    background-color: #654b8d;
+  }
+  .button__text-03{
+    margin-top: 8px;
+    margin-left: 25px;
   }
 }
