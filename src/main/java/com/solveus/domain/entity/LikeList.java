@@ -4,6 +4,7 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import org.springframework.beans.factory.parsing.Problem;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
@@ -22,11 +23,13 @@ public class LikeList {
     @GeneratedValue
     private Long id;
 
-    @Column(nullable = false)
-    private Long user_id;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User userID;
 
-    @Column(nullable = false)
-    private Long problem_id;
+    @ManyToOne
+    @JoinColumn(name = "problem_id")
+    private Static problemID;
 
 
     @CreatedDate
@@ -37,9 +40,9 @@ public class LikeList {
     private LocalDateTime updated;
 
     @Builder
-    public LikeList(Long id, Long user_id, Long problem_id) {
+    public LikeList(Long id, User user_id, Static problem_id) {
         this.id = id;
-        this.user_id = user_id;
-        this.problem_id = problem_id;
+        this.userID = user_id;
+        this.problemID = problem_id;
     }
 }

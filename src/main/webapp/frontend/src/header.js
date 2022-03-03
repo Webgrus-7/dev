@@ -1,11 +1,12 @@
 import React from "react";
 import "./css/header.scss";
 import pencil from "./img/makeQ.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 function Header() {
   let isLogin = useSelector((state)=>state);
+  let navigate= useNavigate();
   return (
     <div className="header">
       <Link to="/">
@@ -25,14 +26,23 @@ function Header() {
             <span className="join__text">회원가입</span>
           </Link>
         </div>
-        <Link to="/feed4">
-          <button className="makeQ">
+          <button className="makeQ" onClick={problemAccess}>
             <img src={pencil} className="button__img"></img>
             <span className="button__text">문제 생성하기</span>
           </button>
-        </Link>
       </div>
     </div>
   );
+  function problemAccess()
+  {
+    if(isLogin===false)
+    {
+      alert("로그인 후 이용 가능합니다.");
+    }
+    else
+    {
+      navigate("/feed4");
+    }
+  }
 }
 export default Header;
