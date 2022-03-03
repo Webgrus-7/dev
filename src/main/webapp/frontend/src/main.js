@@ -30,8 +30,11 @@ function Main() {
                     <span>{text_02}</span>
                 </div>
                 <div className="mobile-button">
-                    <div className="button__text-01">가치풀자와 함께하고 싶다면?</div>
-                    <div className="button__text-02">문제 풀러가기</div>
+                         <div className="button__text-01">가치풀자와 함께하고 싶다면?</div>
+                         <div className="button__text-02">
+                             <div className="button__text-03">문제 풀러가기</div>
+                         </div>
+
                 </div>
             </div>
             <div className="main-02">
