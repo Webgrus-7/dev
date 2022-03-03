@@ -15,15 +15,21 @@ function Join()
     const [nickname, setNickName] = useState("");
     const navigate = useNavigate();
     return (
-        <div className="join__outer">
+        <div className="join1__outer">
             <Header_1 />
             <Header_2 />
             <div className="join__block-01">
                 <img className="join__img-01" src={Register}></img>
                 <span className="join__block__text-01">회원가입</span>
-                <span className="join__block__text-02">Welcome!</span>
-                <span className="join__block__text-03">
+                <div className="join__block__text-02_03__block">
+                    <div className="join_block_text-02_03">
+                        <span className="join__block__text-02">Welcome!</span>
+                        <span className="join__block__text-03">
                     웹 서비스 이용과 회원 등록을 위해 아래의 내용을 입력해주세요.</span>
+                    </div>
+                </div>
+
+ 
                 <div className="join__block-02">
                     <span className="ID__text-02">아이디</span>
                     <form>

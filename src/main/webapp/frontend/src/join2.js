@@ -18,7 +18,7 @@ function Join2()
     const [major, setMajor] = useState("");
     const navigate = useNavigate();
     return (
-        <div className="join__outer">
+        <div className="join2__outer">
             <Header_1 />
             <Header_2 />
             <div className="join__block-04">
