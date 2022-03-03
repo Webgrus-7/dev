@@ -60,7 +60,12 @@ public class User implements UserDetails {
     private LocalDateTime updated;
 
     @OneToMany(mappedBy = "creator_id")
+    @Builder.Default
     private List<Static> problems = new ArrayList<Static>();
+
+    @OneToMany(mappedBy = "userID")
+    @Builder.Default
+    private List<LikeList> like_list = new ArrayList<LikeList>();
 
 
 

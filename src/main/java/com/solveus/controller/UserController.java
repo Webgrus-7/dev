@@ -1,10 +1,8 @@
 package com.solveus.controller;
 
-import com.solveus.domain.dto.JoinDto;
-import com.solveus.domain.dto.LoginDto;
-import com.solveus.domain.dto.TokenResponse;
+import com.solveus.domain.dto.*;
 import com.solveus.domain.entity.User;
-import com.solveus.domain.dto.UserDto;
+import com.solveus.service.AuthService;
 import com.solveus.service.UserService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -26,6 +24,7 @@ import java.util.Map;
 public class UserController {
 
     private final UserService userService;
+    private final AuthService authService;
 
 
 
@@ -64,5 +63,17 @@ public class UserController {
         return result;
     }
 
+    @RequestMapping(value = "/like/all", method = RequestMethod.GET)
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "ACCESS_TOKEN", required = true, allowEmptyValue = false, paramType = "header", dataTypeClass = String.class ),
+            @ApiImplicitParam(name = "REFRESH_TOKEN", required = true, allowEmptyValue = false, paramType = "header", dataTypeClass = String.class)
+    })
+    public ResponseEntity<List<ProblemDto>> getAllLike(HttpServletRequest request) throws Exception {
+        User user = authService.find_user(request);
+        List<ProblemDto> problemDtoList= userService.getAllLike(user);
+
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(problemDtoList);
+    }
 
 }

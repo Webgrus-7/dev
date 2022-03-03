@@ -64,7 +64,7 @@ function Login()
     }
     function onLogin()
     {
-        const JWT_EXPIRY_TIME = 24 * 3600 * 1000;
+        const JWT_EXPIRY_TIME = 180 * 1000;
         return (
             axios.post('/auth/login',
             {
@@ -83,7 +83,7 @@ function Login()
                     axios.defaults.headers.common['ACCESS_TOKEN'] = accessToken.access_TOKEN;
                     axios.defaults.headers.common['REFRESH_TOKEN'] = accessToken.refresh_TOKEN;
                     // 일정시간 지날 때마다 accessToken 재발급 함수 호출
-                    setTimeout(refresh, JWT_EXPIRY_TIME - 60000);
+                    setTimeout(refresh, JWT_EXPIRY_TIME - 100);
                     dispatch({type:"login"});//redux의 로그인 상태변경 함수 호출
                     navigate('/');
                 }
@@ -92,12 +92,15 @@ function Login()
     }
     function refresh()
     {
-        const JWT_EXPIRY_TIME = 24 * 3600 * 1000;
+        const JWT_EXPIRY_TIME = 180 * 1000;
         return (
             axios.post('/auth/accessToken').then(response=>{
                 console.log(response);
+                const accessToken = response.data;
+                axios.defaults.headers.common['ACCESS_TOKEN'] = accessToken.access_TOKEN;
+                axios.defaults.headers.common['REFRESH_TOKEN'] = accessToken.refresh_TOKEN;
                  // 일정시간 지날 때마다 accessToken 재발급 함수 호출
-                setTimeout(refresh, JWT_EXPIRY_TIME - 60000);
+                setTimeout(refresh, JWT_EXPIRY_TIME - 100);
             })
         );
     }
