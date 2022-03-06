@@ -17,8 +17,6 @@ function Feed()
     const [view, setView] = useState(["","","","",""])
     const [answer, setAnswer] = useState("");
     const [multipleCount, setCount] = useState(5);
-    const [error, setError] = useState(false);
-    const [viewEmpty, setViewEmpty] = useState(true);
     let navigate = useNavigate();
     return (
         <div className="feed__outer-01" style={{overflow: 'scroll'}}>
@@ -86,7 +84,7 @@ function Feed()
                 <div>
                 <input className="feed__question__input-01" style={{marginLeft:'590px'}} type="text" onChange={(e)=>{setAnswer(e.target.value)}}></input>
                 </div>
-                <div className="feed__question__button-01" onClick={()=>{viewIsEmpty(); makeProblem(); check()}}>글 작성</div>
+                <div className="feed__question__button-01" onClick={()=>{viewIsEmpty()}}>글 작성</div>
                 <div className="feed__question__button-02" onClick={()=>{navigate("/")}} style={{marginTop: '0px', marginLeft:'20px'}}>취소</div>
             </div>
             
@@ -130,16 +128,20 @@ function Feed()
                 }
                 if(i===multipleCount-1)
                 {
-                    if(count===multipleCount-1)
-                    return setViewEmpty(false);
+                    if(count===multipleCount)
+                    {
+                        return check();
+                    }
                     else
-                    return setViewEmpty(true);
+                    {
+                        return alert("문항을 입력해주세요.");
+                    }
                 }
             }
         }
         else
         {
-            return setViewEmpty(false);
+            return check();
         }
     }//객관식일 경우 문항 개수만큼 for문을 돌아 비어있는 값이 있으면 viewEmpty 변수를 true로 만듦
     function viewInput(e,idx)
@@ -153,33 +155,23 @@ function Feed()
         if(title==="")
         {
             alert("제목을 입력해주세요.");
-            setError(true);
         }
         else if(content==="")
         {
             alert("내용을 입력해주세요.");
-            setError(true);
         }
         else if(answer==="")
         {
             alert("정답을 입력해주세요.");
-            setError(true);
-        }
-        else if(viewEmpty === true)
-        {
-            alert("문항을 입력해주세요.");
-            setError(true);
         }
         else
         {
-            setError(false);
+            makeProblem();
         }
     }
     function makeProblem()
     {
-        if(error===false)
-        {
-            if(type===1 && answer!=="")
+        if(type===1 && answer!=="")
             {
                 let newView=[answer,"","","",""];
                 setView(newView);
@@ -206,7 +198,6 @@ function Feed()
                         navigate("/");
                     })
             );
-        }
     }
 }
 
