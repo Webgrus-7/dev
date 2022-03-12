@@ -171,12 +171,33 @@ function Feed()
     }
     function makeProblem()
     {
-        if(type===1 && answer!=="")
-            {
-                let newView=[answer,"","","",""];
-                setView(newView);
-                setAnswer(1);
-            }
+        if(type===1)
+        {
+            
+            return (
+                axios.post("/problem/new",
+                    {
+                        view_1:answer,
+                        view_2:"",
+                        view_3:"",
+                        view_4:"",
+                        view_5:"",
+                        answer:1,
+                        content,
+                        field,
+                        point,
+                        title,
+                        type,
+                    })
+                    .then((response)=>{
+                        console.log(response);
+                        alert("작성이 완료되었습니다.")
+                        navigate("/");
+                    })
+            );
+        }
+        else
+        {
             return (
                 axios.post("/problem/new",
                     {
@@ -197,7 +218,8 @@ function Feed()
                         alert("작성이 완료되었습니다.")
                         navigate("/");
                     })
-            );
+            ); 
+        }
     }
 }
 

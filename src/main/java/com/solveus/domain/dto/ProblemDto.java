@@ -2,6 +2,9 @@ package com.solveus.domain.dto;
 
 import lombok.*;
 
+import java.time.LocalDateTime;
+import java.util.Date;
+
 @Getter
 @Setter
 @ToString
@@ -10,6 +13,7 @@ public class ProblemDto {
 
     private Long id;
     private Long creator_id;
+    private String creator_nick;
     private String title;
     private String content;
     private String field;
@@ -22,11 +26,13 @@ public class ProblemDto {
     private Integer point;
     private Integer answer;
     private Integer like_count;
+    private LocalDateTime updated;
 
     @Builder
-    public ProblemDto(Long id, Long creator_id, String title,String content,String field,Integer type, String view_1, String view_2, String view_3, String view_4, String view_5, Integer point, Integer answer, Integer like_count) {
+    public ProblemDto(Long id, Long creator_id, String creator_nick,String title,String content,String field,Integer type, String view_1, String view_2, String view_3, String view_4, String view_5, Integer point, Integer answer, Integer like_count, LocalDateTime updated) {
         this.id = id;
         this.creator_id = creator_id;
+        this.creator_nick = creator_nick;
         this.title = title;
         this.content = content;
         this.field = field;
@@ -39,5 +45,6 @@ public class ProblemDto {
         this.point = point;
         this.answer = answer;
         this.like_count = like_count;
+        this.updated = updated;
     }
 }
