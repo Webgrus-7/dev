@@ -34,7 +34,14 @@ function Feed()
                     </div>
                     <div className="feed__table-02">
                         <div className="feed__table__question">문제 칸</div>{/*문제 본문 */}
-                        <div className="feed__table__option">{/*객관식일 때 답안 선택문항지 자리*/}
+                        <div className="feed__table__option">
+                        {/*객관식일 때 답안 선택문항지 자리 
+                        {
+                            type==="주관식"
+                            ? null
+                            : 선택 문항지 코드
+                            }
+                        */}
                         <>
                         {Options.map((option) => (
                             <div key={option.name}>
