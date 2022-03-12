@@ -10,6 +10,7 @@ import Main from "./main";
 import Main2 from "./main2";
 import Search from "./search";
 import MyFeed from "./my_feed";
+import FeedSolve from "./feed_solve";
 import { BrowserRouter, Route, Routes } from "react-router-dom"; 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
         <Routes>
           <Route path="/feed1" element={<Feed1/>} />
           <Route path="/feed2" element={<Feed2/>} />
+          <Route path="/feed_solve" element={<FeedSolve/>}/>
           <Route path="/feed3" element={<Feed3/>} />
           <Route path="/feed4" element={<Feed4/>} />
           <Route path="/join1" element={<Join/>} />
