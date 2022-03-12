@@ -27,6 +27,7 @@ public class ProblemService {
         ProblemDto result = ProblemDto.builder()
                 .id(value.getId())
                 .creator_id(value.getCreator_id().getId())
+                .creator_nick(value.getCreator_id().getNickname())
                 .title(value.getTitle())
                 .content(value.getContent())
                 .field(value.getField())
@@ -39,6 +40,7 @@ public class ProblemService {
                 .point(value.getPoint())
                 .answer(value.getAnswer())
                 .like_count(value.getLike_count())
+                .updated(value.getUpdated())
                 .build();
         return result;
     }
