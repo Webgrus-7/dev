@@ -23,8 +23,8 @@ function Feed()
                     <div className="feed__table-02"></div>
                 </div>
                 <div className="feed__table__button">
-                    <Link to="/feed3" style={{textDecoration: 'none'}}>
-                    <span className="feed__table__button__text">다음</span>
+                    <Link to="/feed_solve" style={{textDecoration: 'none'}}>
+                    <span className="feed__table__button__text">풀기</span>
                     </Link>
                 </div>
                 <div className="feed__bar-05"></div>
