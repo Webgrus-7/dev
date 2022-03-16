@@ -59,6 +59,7 @@ body {
 .boxList {
   margin: 30px 0;
   margin-left: 10%;
+  text-align: center;
 }
 .boxList ul li {
   display: inline-block;
@@ -140,4 +141,14 @@ body {
 .infoData {
   @extend .infoName;
   color: #5b5b5b;
+}
+.loading {
+  @include font();
+  margin-top: 100px;
+  font-family: "SpoqaHanSansNeo-Regular", serif;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1.22;
+  color: #384ea2;
 }
