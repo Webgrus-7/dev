@@ -1,138 +1,140 @@
-import React from "react";
+import axios from "axios";
+import React, {useState} from "react";
 import "./css/search.scss";
 import Header1 from "./header";
 import Header2 from "./header2";
 import searchbttn from "./img/searchbttn.png";
+import loading from "./img/loading.gif"
 
-function search() {
-  let text_tag = ["#어쩌고 #저쩌고 #어쩌고"];
+let problemSet=[];
+let problemIdx=[];
+let randNum=[];
+let point=1;
+let field="토익";
+let mapIdx=4;
+let firstOpen = true;
+function Search() {
+  const [isLoading, setLoading] = useState(true);
   return (
     <div className="search">
       <Header1 />
       <Header2 />
-      <div class="sort">
+      <div class="sort" onLoad={()=>{problemList(); point=1; field="토익"}}>
         <span className="sort_title">난이도</span>
-        <select className="sort_option">
-          <option>★☆☆☆☆</option>
-          <option>★★☆☆☆</option>
-          <option>★★★☆☆</option>
-          <option>★★★★☆</option>
-          <option>★★★★★</option>
-          <option>none</option>
+        <select defaultValue={1} className="sort_option" onChange={(e)=>pointChange(e.target.value)}>
+          <option value={1}>★☆☆☆☆</option>
+          <option value={2}>★★☆☆☆</option>
+          <option value={3}>★★★☆☆</option>
+          <option value={4}>★★★★☆</option>
+          <option value={5}>★★★★★</option>
         </select>
         <span className="sort_title">분야</span>
-        <select className="sort_option">
-          <option>전공</option>
-          <option>교양</option>
-          <option>토익</option>
-          <option>토플</option>
-          <option>none</option>
+        <select defaultValue="토익" className="sort_option" onChange={(e)=>FieldChange(e.target.value)}>
+          <option value="토익">토익</option>
+          <option value="토플">토플</option>
+          <option value="교양">교양</option>
+          <option value="전공">전공</option>
+          <option value="기타">기타</option>
         </select>
-        <img src={searchbttn} class="searchbttn"></img>
+        <img src={searchbttn} class="searchbttn" style={{cursor:"pointer"}} onClick={()=>{problemList()}}></img>
       </div>
       <div className="Qlist">
         <div class="boxList">
-          <div class="box">
-            <div class="box_title">
-              1. 토익 추천 문제 토플 추천 문제, 전공 추천문제 <br />
-              (2018.08.10)
-            </div>
-            <div class="box_by">
-              by <span class="byname">조예린</span>
-            </div>
-            <div class="hashtag">{text_tag}</div>
-            <div class="info">
-              <div class="line1"></div>
-              <div class="infoName">
-                <span>좋아요</span>
-                <span>정답 률</span>
-                <span>난이도</span>
-              </div>
-              <div class="line2"></div>
-              <div class="infoData">
-                <span>128</span>
-                <span>99%</span>
-                <span>☆★★★★</span>
-              </div>
-            </div>
-          </div>
-          <div class="box">
-            <div class="box_title">
-              2. 토익 추천 문제 토플 추천 문제, 전공 추천문제 모음 문제 모음
-              전공 족보 모음 <br />
-              (2018.03.10)
-            </div>
-            <div class="box_by">
-              by <span class="byname">조예린</span>
-            </div>
-            <div class="hashtag">{text_tag}</div>
-            <div class="info">
-              <div class="line1"></div>
-              <div class="infoName">
-                <span>좋아요</span>
-                <span>정답 률</span>
-                <span>난이도</span>
-              </div>
-              <div class="line2"></div>
-              <div class="infoData">
-                <span>128</span>
-                <span>99%</span>
-                <span>☆★★★★</span>
-              </div>
-            </div>
-          </div>
-          <div class="box">
-            <div class="box_title">
-              3. 토익 추천 문제 토플 추천 문제, 전공 추천문제 <br />
-              (2018.08.10)
-            </div>
-            <div class="box_by">
-              by <span class="byname">djfla</span>
-            </div>
-            <div class="hashtag">{text_tag}</div>
-            <div class="info">
-              <div class="line1"></div>
-              <div class="infoName">
-                <span>좋아요</span>
-                <span>정답 률</span>
-                <span>난이도</span>
-              </div>
-              <div class="line2"></div>
-              <div class="infoData">
-                <span>128</span>
-                <span>99%</span>
-                <span>☆★★★★</span>
-              </div>
-            </div>
-          </div>
-          <div class="box">
-            <div class="box_title">
-              4. 토익 추천 문제 토플 추천 문 제, 전공 추천문제 모음집
-              <br />
-              (2020.08.20)
-            </div>
-            <div class="box_by">
-              by<span class="byname">김주영</span>
-            </div>
-            <div class="hashtag">{text_tag}</div>
-            <div class="info">
-              <div class="line1"></div>
-              <div class="infoName">
-                <span>좋아요</span>
-                <span>정답 률</span>
-                <span>난이도</span>
-              </div>
-              <div class="line2"></div>
-              <div class="infoData">
-                <span>128</span>
-                <span>99%</span>
-                <span>☆★★★★</span>
-              </div>
-            </div>
-          </div>
+          {
+            isLoading === true
+            ? <div className="loading">
+              <img src={loading} style={{width:"80px"}}/><br />
+              문제 로딩 중입니다...</div>
+            : [...Array(mapIdx)].map((s,idx)=>{
+              return (
+                <div class="box">
+                    <div class="box_title">
+                      {idx+1}. {problemSet[problemIdx[randNum[idx]]].title}<br />
+                      {problemSet[problemIdx[randNum[idx]]].updated}
+                    </div>
+                    <div class="box_by">
+                      by <span class="byname">{problemSet[problemIdx[randNum[idx]]].creator_nick}</span>
+                    </div>
+                    <div class="info">
+                      <div class="line1"></div>
+                      <div class="infoName">
+                        <span>좋아요</span>
+                        <span>정답 률</span>
+                        <span>난이도</span>
+                      </div>
+                      <div class="line2"></div>
+                      <div class="infoData">
+                        <span>128</span>
+                        <span>99%</span>
+                        <span>{problemSet[problemIdx[randNum[idx]]].point}</span>
+                      </div>
+                    </div>
+                </div>
+              )})
+          }
         </div>
       </div>
     </div>
   );
+  function pointChange(e)
+  {
+    point=e;
+    return point;
+  }//point 값 변경
+  function FieldChange(e)
+  {
+    field=e;
+    return field;
+  }//field 값 변경
+  function problemList()
+  {
+    setLoading(true);
+    let count=0;
+    if(firstOpen === false)
+    {
+      problemSet=[];
+      problemIdx=[];
+      randNum=[];
+      mapIdx=4;
+    }//페이지가 처음 렌더링 된 것이 아니라면 값 초기화
+    return (
+      axios.get("/problem/all")
+      .then((response)=>{
+          for(var i=0; i<response.data.length; i++)
+          {
+            if(response.data[i].point === Number(point) && response.data[i].field === field)
+            {
+              problemSet[i]=response.data[i];
+              problemIdx[count]=i;
+              count++;
+            }//문제들 중 point, field가 같은 값이 있으면 problemSet에 저장, index는 problemIdx에 저장
+          }
+          if(count===0)
+          {
+            alert("검색 결과가 없습니다.");
+            window.location.replace("/search");
+          }//검색 결과가 없을 때 원래 페이지로 돌아감(새로고침 O)
+          else
+          {
+            if(count<4)
+            {
+              mapIdx=count;
+            }//count가 4 이하일 때 count된 값 만큼만 화면에 표시함
+            for(i=0; i<mapIdx; i++)
+            {
+              let rand = Math.floor(Math.random()* (problemIdx.length)); //0부터 problemIdx의 범위를 가지는 랜덤 값 생성
+              if(randNum.indexOf(rand)===-1)
+              {
+                randNum[i] = rand;
+              }
+              else i--;//중복 랜덤 값 방지
+            }
+            firstOpen=false;//페이지가 한번 이상 렌더링 되었음을 표시함
+          }
+          setLoading(false);//로딩을 끝내고 검색 결과를 표시함
+        })
+    );
+    
+  }
 }
-export default search;
+export default Search;

@@ -64,21 +64,7 @@ public class ProblemController {
         List<Static> statics = creator.getProblems();
         List<ProblemDto> result = new ArrayList<>();
         for(Static s: statics){
-            ProblemDto show = ProblemDto.builder()
-                    .id(s.getId())
-                    .creator_id(s.getCreator_id().getId())
-                    .title(s.getTitle())
-                    .content(s.getContent())
-                    .field(s.getField())
-                    .type(s.getType())
-                    .view_1(s.getView_1())
-                    .view_2(s.getView_2())
-                    .view_3(s.getView_3())
-                    .view_4(s.getView_4())
-                    .view_5(s.getView_5())
-                    .point(s.getPoint())
-                    .answer(s.getAnswer())
-                    .build();
+            ProblemDto show = problemService.makeProblemDto(s);
             result.add(show);
         }
 
