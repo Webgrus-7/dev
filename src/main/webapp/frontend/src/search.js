@@ -5,6 +5,8 @@ import Header1 from "./header";
 import Header2 from "./header2";
 import searchbttn from "./img/searchbttn.png";
 import loading from "./img/loading.gif"
+import ddabong from "./img/ddabong.png";
+import { useSelector } from "react-redux";
 
 let problemSet=[];
 let problemIdx=[];
@@ -15,6 +17,8 @@ let mapIdx=4;
 let firstOpen = true;
 function Search() {
   const [isLoading, setLoading] = useState(true);
+  const [like, setLike] = useState([]);
+  let isLogin = useSelector((state)=>state);
   return (
     <div className="search">
       <Header1 />
@@ -64,11 +68,12 @@ function Search() {
                       </div>
                       <div class="line2"></div>
                       <div class="infoData">
-                        <span>128</span>
+                        <span>{like[idx]}</span>
                         <span>99%</span>
                         <span>{problemSet[problemIdx[randNum[idx]]].point}</span>
                       </div>
                     </div>
+                    <img src={ddabong} id="ddabong" style={{width:"40px", marginTop:"30px", cursor:"pointer"}} onClick={()=>{likeEvent(problemSet[problemIdx[randNum[idx]]],idx)}}/>
                 </div>
               )})
           }
@@ -76,6 +81,36 @@ function Search() {
       </div>
     </div>
   );
+  function likeEvent(problem,idx)
+  {
+    if(isLogin===false)
+    {
+      alert("로그인 후 이용 가능합니다.");
+    }//로그인 상태가 아닐 때 경고창 표시
+    return(
+      axios.post("/problem/like/"+problem.id)
+      .then((response)=>{
+        if(response.data.nick===problem.nick)
+        {
+          alert("자신의 문제는 좋아요할 수 없습니다.");
+        }//자신의 문제 좋아요 눌렀을 때 경고창 표시
+        else
+        {
+          if(response.data===1)
+        {
+          problem.like_count+=1;
+        }
+        else
+        {
+          problem.like_count-=1;
+        }
+          let newLike=[...like];
+          newLike[idx]=problem.like_count;
+          setLike(newLike);
+        }
+      })
+    );
+  }
   function pointChange(e)
   {
     point=e;
@@ -90,6 +125,7 @@ function Search() {
   {
     setLoading(true);
     let count=0;
+    let newLike=[...like];
     if(firstOpen === false)
     {
       problemSet=[];
@@ -126,9 +162,15 @@ function Search() {
               if(randNum.indexOf(rand)===-1)
               {
                 randNum[i] = rand;
+                if(problemSet[problemIdx[randNum[i]]].like_count==="")
+                {
+                  newLike[i]=0;
+                }
+                else newLike[i]=problemSet[problemIdx[randNum[i]]].like_count;//like변수에 값 부여
               }
               else i--;//중복 랜덤 값 방지
             }
+            setLike(newLike);
             firstOpen=false;//페이지가 한번 이상 렌더링 되었음을 표시함
           }
           setLoading(false);//로딩을 끝내고 검색 결과를 표시함
