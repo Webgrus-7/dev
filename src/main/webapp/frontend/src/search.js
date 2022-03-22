@@ -90,24 +90,17 @@ function Search() {
     return(
       axios.post("/problem/like/"+problem.id)
       .then((response)=>{
-        if(response.data.nick===problem.nick)
-        {
-          alert("자신의 문제는 좋아요할 수 없습니다.");
-        }//자신의 문제 좋아요 눌렀을 때 경고창 표시
-        else
-        {
-          if(response.data===1)
-        {
-          problem.like_count+=1;
-        }
-        else
-        {
-          problem.like_count-=1;
-        }
-          let newLike=[...like];
-          newLike[idx]=problem.like_count;
-          setLike(newLike);
-        }
+        if(response.data===1)
+          {
+            problem.like_count+=1;
+          }
+          else
+          {
+            problem.like_count-=1;
+          }
+            let newLike=[...like];
+            newLike[idx]=problem.like_count;
+            setLike(newLike);
       })
     );
   }
