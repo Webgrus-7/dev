@@ -21,7 +21,7 @@ function Header2() {
   );
   function myFeedAccess()
   {
-    if(isLogin===false)
+    if(isLogin.checkLogin===false)
     {
       alert("로그인 후 이용 가능합니다.");
     }

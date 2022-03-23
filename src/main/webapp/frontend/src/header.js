@@ -15,7 +15,7 @@ function Header() {
       <div className="menu">
         <div className="login">
           {//login 상태면 로그아웃을 표시하고, login 상태가 아니면 로그인을 표시함.
-            isLogin===true
+            isLogin.checkLogin===true
             ? <span className="login__text">로그아웃</span>
             : <Link to="/login">
                 <span className="login__text">로그인</span>
@@ -35,7 +35,7 @@ function Header() {
   );
   function problemAccess()
   {
-    if(isLogin===false)
+    if(isLogin.checkLogin===false)
     {
       alert("로그인 후 이용 가능합니다.");
     }

@@ -6,7 +6,10 @@ import Header2 from "./header2";
 import searchbttn from "./img/searchbttn.png";
 import loading from "./img/loading.gif"
 import ddabong from "./img/ddabong.png";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import moment from 'moment';
+import 'moment/locale/ko';
 
 let problemSet=[];
 let problemIdx=[];
@@ -18,7 +21,9 @@ let firstOpen = true;
 function Search() {
   const [isLoading, setLoading] = useState(true);
   const [like, setLike] = useState([]);
+  let navigate = useNavigate();
   let isLogin = useSelector((state)=>state);
+  let dispatch = useDispatch();
   return (
     <div className="search">
       <Header1 />
@@ -50,14 +55,16 @@ function Search() {
               <img src={loading} style={{width:"80px"}}/><br />
               문제 로딩 중입니다...</div>
             : [...Array(mapIdx)].map((s,idx)=>{
+              let problem = problemSet[problemIdx[randNum[idx]]];
+              const time = moment(problem.updated).format('YYYY.MM.DD');
               return (
-                <div class="box">
+                <div class="box" onClick={()=>{navigate("/feed2"); dispatch({type:'assign', payload:{problem:problem, time:time}})}} style={{cursor:"pointer"}}>
                     <div class="box_title">
-                      {idx+1}. {problemSet[problemIdx[randNum[idx]]].title}<br />
-                      {problemSet[problemIdx[randNum[idx]]].updated}
+                      {idx+1}. {problem.title}<br />
+                      {time}
                     </div>
                     <div class="box_by">
-                      by <span class="byname">{problemSet[problemIdx[randNum[idx]]].creator_nick}</span>
+                      by <span class="byname">{problem.creator_nick}</span>
                     </div>
                     <div class="info">
                       <div class="line1"></div>
@@ -70,10 +77,10 @@ function Search() {
                       <div class="infoData">
                         <span>{like[idx]}</span>
                         <span>99%</span>
-                        <span>{problemSet[problemIdx[randNum[idx]]].point}</span>
+                        <span>{problem.point}</span>
                       </div>
                     </div>
-                    <img src={ddabong} id="ddabong" style={{width:"40px", marginTop:"30px", cursor:"pointer"}} onClick={()=>{likeEvent(problemSet[problemIdx[randNum[idx]]],idx)}}/>
+                    <img src={ddabong} id="ddabong" style={{width:"40px", marginTop:"30px", cursor:"pointer"}} onClick={(event)=>{likeEvent(problem,idx,event)}}/>
                 </div>
               )})
           }
@@ -81,8 +88,9 @@ function Search() {
       </div>
     </div>
   );
-  function likeEvent(problem,idx)
+  function likeEvent(problem,idx,event)
   {
+    event.stopPropagation();
     if(isLogin===false)
     {
       alert("로그인 후 이용 가능합니다.");

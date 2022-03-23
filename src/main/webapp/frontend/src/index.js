@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import { Provider } from 'react-redux';
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 
 let initialLogin=false;
 function checkLogin(isLogin=initialLogin, action)
@@ -18,7 +18,23 @@ function checkLogin(isLogin=initialLogin, action)
     return isLogin;
   }
 }
-let store = createStore(checkLogin);
+let initialProblem = [];
+function returnProblem(problem=initialProblem, action)
+{
+  let newProblem = problem;
+  if(action.type==='assign')
+  {
+    newProblem = action.payload.problem;
+    newProblem.updated = action.payload.time;
+    return newProblem;
+  }
+  else
+  {
+    return problem;
+  }
+}
+let store = createStore(combineReducers({checkLogin, returnProblem}));
+
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
