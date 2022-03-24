@@ -1,0 +1,296 @@
+@import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
+@import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+@font-face {
+  font-family: 'Vitro_core';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Vitro_core.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+@mixin font()
+{
+  font-family: "Nanum Myeongjo", serif;
+  font-weight: 800;
+  font-stretch: normal;
+  font-style: normal;
+  text-align: left;
+}
+body {
+  overflow-x: hidden;
+}
+.myfeed_outer {
+    width:100%;
+    height:1080px;
+}
+/*내 정보*/
+.my_info{
+  @include font();
+  width:100%;
+  height:300px;
+  padding-left: 90px;
+  padding-right: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+.my_info_img{
+  display: inline-block;
+}
+.my_info_profile{
+  width:50%;
+  height:300px;
+  margin-top: 40px;
+  display: inline-block;
+}
+.my_info_profile_bg{
+  width:128px;
+  height:128px;
+  margin: 20px 0 0px -115px;
+  border-radius: 50%;
+  opacity: 0.18;
+  background-color: #384ea2;
+  display: inline-block;
+}
+.my_info_profile_img{
+  width:128px;
+  height:128px;
+  display: inline-block;
+}
+.my_info_bar-01{
+  width: 0;
+  height: 90px;
+  margin: -10px 0 0 24px;
+  opacity: 0.44;
+  border: solid 2px #4a4a4a;
+  display: inline-block;
+}
+.my_info_block-01{/*닉네임*/
+  display: inline-block;
+  margin-left: 20px;
+
+}
+.my_info_nikname_content{
+  font-weight: 600;
+  font-size: 28px;
+  color: #4A4A4A;
+  margin-top: 30px;
+}
+.my_info_nikname{
+  color: #384EA2;
+  @extend .my_info_nikname_content;
+  font-weight: 800;
+}
+.my_info_bar-02{
+  width: 0;
+  height: 90px;
+  opacity: 0.25;
+  border: solid 1px #4a4a4a;
+  border-style: dashed;
+  display: inline-block;
+  margin-left: 70px;
+}
+.my_info_block_02{
+  display: inline-block;
+  width: auto;
+  height: 100px;
+  margin-left: 70px;
+}
+.ddaom{
+  margin: 0px 0px 0 0px;
+  @include font();
+  font-family: 'Vitro_core', serif;
+  font-size: 70px;
+  line-height: 1.14;
+  color: #384ea2;
+  display: inline-block;
+}
+.my_info_text{
+    margin: 13px 0 0 0px;
+    font-size: 23px;
+    font-weight: bold;
+    line-height: 1.12;
+    display:block;
+    color: #4A4A4A;
+}
+/*팔로잉 팔로워*/
+.my_info_follow{
+  width:400px;
+  height:auto;
+  display: inline-block;
+  margin-right: 150px;
+  margin-top: 50px;
+}
+
+.follow_title-bar
+{
+    width: 368px;
+    height: 0;
+    opacity: 0.61;
+    border: solid 3px #4a4a4a;
+    margin: 0px 0px 6px 0px;
+    display: inline-block;
+}
+.follow_title_text-01
+{
+    width: 95px;
+    height: 35px;
+    margin: 0px 109.8px 0px 0px;
+    @include font();
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 1.17;
+    letter-spacing: 0.45px;
+    color: #384ea2;
+}
+.follow_title_text-02
+{
+    width: 95px;
+    height: 35px;
+    margin: 16px 109.8px 11px -22px;
+    @extend .follow_title_text-01;
+}
+.follow_num-bar
+{
+    width: 368px;
+    height: 0;
+    margin: 0px 0 0 0px;
+    opacity: 0.61;
+    border: solid 1px #4a4a4a;
+    display: inline-block;
+}
+.follow_num-01
+{
+    width: 38px;
+    height: 26px;
+    margin: 0px 145px 0px 0px;
+    font-size: 23px;
+    font-weight: bold;
+    line-height: 1.13;
+    letter-spacing: 0.35px;
+}
+.follow_num-02
+{
+    @extend .follow_num-01;
+    margin: 0px 0px 0px -13px;
+}
+/*페이지1*/
+.myfeed {
+  display: flex;
+  height: 900px;
+  padding-left: 60px;
+  padding-right: 60px;
+  .info {
+    width: 90%;
+    margin-top: 35px;
+    flex: 33%;
+    border-right: rgba(185, 185, 185, 0.438);
+    border-right-style: dotted;
+  }
+}
+.myfeed :last-child {
+  border-right: none;
+}
+.line1 {
+  height: 1px;
+  opacity: 0.61;
+  border: solid 1px #4a4a4a;
+  background-color: #4a4a4a;
+}
+.info_title {
+  @include font();
+  font-size: 20px;
+  line-height: 1.13;
+  letter-spacing: 0.23px;
+  color: #384ea2;
+  margin-left: 10px;
+}
+.line2 {
+  opacity: 0.21;
+  border: solid 0.01px #4a4a4aad;
+  margin-bottom: 5.8px;
+  margin-top: 10px;
+}
+.info_num {
+  @extend .info_title;
+  color: #5b5b5b;
+}
+
+/*문제박스들*/
+.boxes {
+  margin: 40px auto; /*좌우 중앙배치*/
+}
+.feed_box {
+  width: 35%;
+  padding: 20px 20px 25px 21px;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.08);
+  border: solid 0.2px #d4d4d4;
+  background-color: #fefefd;
+  margin-left: 30px;
+  margin-bottom: 20px;
+  display: inline-block;
+}
+.feed_box_title {
+  @include font();
+  font-size: 17px;
+  height: 110px; /*제목길이 상관없이 일정하게 칸 유지*/
+  letter-spacing: 0.39px;
+  color: #141414;
+  line-height: 1.27;
+}
+.feed_box_by {
+  @include font();
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 2;
+  letter-spacing: 0.3px;
+  color: #4a4a4a;
+  margin-top: 2px;
+}
+.feed_byname {
+  color: #654b8d;
+}
+/*해시태그*/
+.feed_hashtag {
+  @include font();
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.47;
+  letter-spacing: 0.29px;
+  color: #5b5b5b;
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+/*각 문제 정보*/
+.feed_info {
+  margin-top: 35px;
+  margin-left: -2px;
+  width: 300px;
+}
+.feed_line1 {
+  height: 1px;
+  opacity: 0.61;
+  border: solid 1px #4a4a4a;
+  background-color: #4a4a4a;
+  margin-bottom: 5.8px;
+}
+.feed_infoName {
+  @include font();
+  font-size: 11px;
+  line-height: 1.13;
+  letter-spacing: 0.23px;
+  color: #384ea2;
+  display: flex;
+  justify-content: space-between;
+}
+.feed_infoName span {
+  margin-right: 20px;
+}
+
+.feed_line2 {
+  opacity: 0.21;
+  border: solid 0.01px #4a4a4aad;
+  margin-bottom: 5.8px;
+  margin-top: 5.8px;
+}
+.feed_infoData {
+  @extend .feed_infoName;
+  color: #5b5b5b;
+}
