@@ -10,6 +10,7 @@ function Feed()
     let problem = useSelector((state)=>state);
     const [answer__essay, setEssay] = useState("");
     const [answer__option, setOption] = useState("");
+    const [view__option, setView] = useState("");
     const navigate = useNavigate();
     const Options = [
         { name: problem.returnProblem.view_1},
@@ -48,8 +49,9 @@ function Feed()
                                     className="feed__option"
                                     type="radio"
                                     name="option__selector"
+                                    id={option.name}
                                     value={option.name}
-                                    onChange={()=>{setOption(idx+1)}}
+                                    onChange={(e)=>{setOption(idx+1); setView(e.target.value)}}
                                     />
                                     <label htmlFor={option.name}>{option.name}</label>
                                     </div>
@@ -59,8 +61,8 @@ function Feed()
                         </div>
                     </div>
                 </div>
-                <div className="feed__table__button">
-                    <span className="feed__table__button__text" onClick={()=>{check_answer()}}>제출</span>
+                <div className="feed__table__button" style={{cursor:"pointer"}} onClick={()=>{check_answer()}}>
+                    <span className="feed__table__button__text">제출</span>
                 </div>
                 <div className="feed__bar-05"></div>
                 <div className="feed__answer__input">
@@ -71,7 +73,7 @@ function Feed()
                     <input className="feed__answer__essay" type="text" 
                         onChange={
                             Number(problem.returnProblem.type)===1
-                            ? (e)=>{setEssay(e.target.value)}
+                            ? (e)=>{setEssay(e.target.value); setView(e.target.value)}
                             : (e)=>{setOption(e.target.value)}
                         }
                         value={
@@ -86,12 +88,35 @@ function Feed()
     );
     function check_answer()
     {
+        let correct = false;
         if(answer__essay =="" && answer__option ==""){
             alert("답을 입력해주세요.");
         }
         else
         {
-            navigate('/feed3');
+            if(problem.returnProblem.type===1)
+            {
+                if(answer__essay===problem.returnProblem.view_1)
+                {
+                    correct=true;
+                }
+                else
+                {
+                    correct=false;
+                }
+            }
+            else
+            {
+                if(answer__option===problem.returnProblem.answer)
+                {
+                    correct=true;
+                }
+                else
+                {
+                    correct=false;
+                }
+            }
+            navigate('/feed3', {state:{correct:correct, view:view__option}});
         }
     }
 }

@@ -196,7 +196,7 @@
 }
 .feed__profile__text-08
 {
-    width: 38px;
+    width: 45px;
     height: 26px;
     margin: 80px 157.8px 25px -386px;
     @include font();
@@ -485,13 +485,14 @@
 }
 .feed__table__text-03
 {
-    width: 126px;
+    width: 870px;
     height: 34px;
-    margin: 80px 0 0 755px;
+    margin: 80px 0 0 0px;
     @include font();
     font-family: 'SpoqaHanSansNeo-Regular', serif;
     font-size: 27px;
     line-height: 1.26;
+    text-align:right;
     color: #5b5b5b;
     display: inline-block;
 }
