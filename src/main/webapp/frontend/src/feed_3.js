@@ -1,42 +1,57 @@
 import Header1 from "./header"
 import Header2 from "./header2"
 import "./css/feed.scss"
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useSelector } from 'react-redux';
 
 
 function Feed()
 {
+    let location = useLocation();
+    let problem = useSelector((state)=>state);
+    let correct = location.state.correct;
+    let view = location.state.view;
     return (
         <div className="feed__outer-01" style={{overflow: 'scroll'}}>
             <Header1 />
             <Header2 />
             <div className="feed__inner-02">
                 <div className="feed__bar-03" style={{marginLeft: '-90px', width: '571.4px'}}></div>
-                <span className="feed__profile__text-06" style={{marginLeft: '-570px', width: '99px'}}>내 점수</span>
+                <span className="feed__profile__text-06" style={{marginLeft: '-570px', width: '99px'}}>결과</span>
                 <span className="feed__profile__text-07">정답률</span>
-                <span className="feed__profile__text-07">난이도</span>
-                <div className="feed__bar-04" style={{marginLeft: '-582px', width: '571.4px'}}></div>
-                <span className="feed__profile__text-08" style={{marginLeft: '-560px'}}>128</span>
+                <span className="feed__profile__text-07" style={{marginLeft: '5px'}}>난이도</span>
+                <div className="feed__bar-04" style={{marginLeft: '-607px', width: '571.4px'}}></div>
+                {
+                    correct === true
+                    ? <span className="feed__profile__text-08" style={{marginLeft: '-560px'}}>정답</span>
+                    : <span className="feed__profile__text-08" style={{marginLeft: '-560px'}}>오답</span>
+                }
                 <span className="feed__profile__text-09">88.7%</span>
-                <span className="feed__profile__text-09">★★★★☆</span>
-                <div style={{marginLeft: '-576px', marginTop: '150px'}}>
+                <span className="feed__profile__text-09" style={{marginLeft:'5px'}}>{problem.returnProblem.point}</span>
+                <div style={{marginLeft: '-617px', marginTop: '150px'}}>
                     <div className="feed__table-01">
                         <div>
-                            <span className="feed__table__subject">제목~~문제입니당</span>
+                            <span className="feed__table__subject">{problem.returnProblem.title}</span>
                         </div>
                         <span className="feed__table__writer-01">작성자</span>
-                        <span className="feed__table__writer-02">조예린</span>
+                        <span className="feed__table__writer-02">{problem.returnProblem.creator_nick}</span>
                         <span className="feed__table__writer-01">작성일</span>
-                        <span className="feed__table__writer-02">2021.09.01</span>
+                        <span className="feed__table__writer-02">{problem.returnProblem.updated}</span>
                     </div>
                     <div className="feed__table-02">
-                        <span className="feed__table__text-01">본문 자리입니당</span>
+                        <span className="feed__table__text-01">
+                            <div dangerouslySetInnerHTML={{ __html: problem.returnProblem.content }}></div>
+                        </span>
                     </div>
                     <div className="feed__table-03">
                         <div className="feed__bar-07"></div>
                         <span className="feed__table__text-02">정답</span>
                         <div>
-                        <span className="feed__table__text-03">정답입니당</span>
+                            {
+                                correct === true
+                                ? <span className="feed__table__text-03">{view}</span>  
+                                : <span className="feed__table__text-03">미공개</span>
+                            }
                         </div>
                     </div>
                 </div>
