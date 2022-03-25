@@ -1,5 +1,11 @@
 @import url(//fonts.googleapis.com/earlyaccess/nanummyeongjo.css);
 @import url(//spoqa.github.io/spoqa-han-sans/css/SpoqaHanSansNeo.css);
+@font-face {
+  font-family: 'Vitro_core';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.0/Vitro_core.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
 @mixin font()
 {
   font-family: "Nanum Myeongjo", serif;
@@ -15,10 +21,160 @@ body {
     width:100%;
     height:1080px;
 }
+/*내 정보*/
+.my_info{
+  @include font();
+  width:100%;
+  height:300px;
+  padding-left: 90px;
+  padding-right: 60px;
+  display: flex;
+  justify-content: space-between;
+}
+.my_info_img{
+  display: inline-block;
+}
+.my_info_profile{
+  width:50%;
+  height:300px;
+  margin-top: 40px;
+  display: inline-block;
+}
+.my_info_profile_bg{
+  width:128px;
+  height:128px;
+  margin: 20px 0 0px -115px;
+  border-radius: 50%;
+  opacity: 0.18;
+  background-color: #384ea2;
+  display: inline-block;
+}
+.my_info_profile_img{
+  width:128px;
+  height:128px;
+  display: inline-block;
+}
+.my_info_bar-01{
+  width: 0;
+  height: 90px;
+  margin: -10px 0 0 24px;
+  opacity: 0.44;
+  border: solid 2px #4a4a4a;
+  display: inline-block;
+}
+.my_info_block-01{/*닉네임*/
+  display: inline-block;
+  margin-left: 20px;
+
+}
+.my_info_nikname_content{
+  font-weight: 600;
+  font-size: 28px;
+  color: #4A4A4A;
+  margin-top: 30px;
+}
+.my_info_nikname{
+  color: #384EA2;
+  @extend .my_info_nikname_content;
+  font-weight: 800;
+}
+.my_info_bar-02{
+  width: 0;
+  height: 90px;
+  opacity: 0.25;
+  border: solid 1px #4a4a4a;
+  border-style: dashed;
+  display: inline-block;
+  margin-left: 70px;
+}
+.my_info_block_02{
+  display: inline-block;
+  width: auto;
+  height: 100px;
+  margin-left: 70px;
+}
+.ddaom{
+  margin: 0px 0px 0 0px;
+  @include font();
+  font-family: 'Vitro_core', serif;
+  font-size: 70px;
+  line-height: 1.14;
+  color: #384ea2;
+  display: inline-block;
+}
+.my_info_text{
+    margin: 13px 0 0 0px;
+    font-size: 23px;
+    font-weight: bold;
+    line-height: 1.12;
+    display:block;
+    color: #4A4A4A;
+}
+/*팔로잉 팔로워*/
+.my_info_follow{
+  width:400px;
+  height:auto;
+  display: inline-block;
+  margin-right: 150px;
+  margin-top: 50px;
+}
+
+.follow_title-bar
+{
+    width: 368px;
+    height: 0;
+    opacity: 0.61;
+    border: solid 3px #4a4a4a;
+    margin: 0px 0px 6px 0px;
+    display: inline-block;
+}
+.follow_title_text-01
+{
+    width: 95px;
+    height: 35px;
+    margin: 0px 109.8px 0px 0px;
+    @include font();
+    font-weight: 800;
+    font-size: 28px;
+    line-height: 1.17;
+    letter-spacing: 0.45px;
+    color: #384ea2;
+}
+.follow_title_text-02
+{
+    width: 95px;
+    height: 35px;
+    margin: 16px 109.8px 11px -22px;
+    @extend .follow_title_text-01;
+}
+.follow_num-bar
+{
+    width: 368px;
+    height: 0;
+    margin: 0px 0 0 0px;
+    opacity: 0.61;
+    border: solid 1px #4a4a4a;
+    display: inline-block;
+}
+.follow_num-01
+{
+    width: 38px;
+    height: 26px;
+    margin: 0px 145px 0px 0px;
+    font-size: 23px;
+    font-weight: bold;
+    line-height: 1.13;
+    letter-spacing: 0.35px;
+}
+.follow_num-02
+{
+    @extend .follow_num-01;
+    margin: 0px 0px 0px -13px;
+}
 /*페이지1*/
 .myfeed {
   display: flex;
-  height: auto;
+  height: 900px;
   padding-left: 60px;
   padding-right: 60px;
   .info {
@@ -27,16 +183,9 @@ body {
     flex: 33%;
     border-right: rgba(185, 185, 185, 0.438);
     border-right-style: dotted;
-    padding-bottom: 80px;
   }
 }
 .myfeed :last-child {
-  border-right: none;
-}
-.boxes :last-child {
-  border-right: solid 0.2px #d4d4d4;
-}
-.feed_box :last-child {
   border-right: none;
 }
 .line1 {

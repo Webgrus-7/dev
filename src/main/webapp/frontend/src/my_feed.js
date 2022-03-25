@@ -1,6 +1,7 @@
 import "./css/my_feed.scss";
 import Header from "./header";
 import Header2 from "./header2";
+import profile from "./img/profile.png"
 import React, { useState } from "react";
 import axios from "axios";
 
@@ -13,6 +14,34 @@ function MyFeed() {
       <div className="myfeed_outer" style={{overflow: 'scroll'}} onLoad={()=>{userInfo(); userLike()}}>
           <Header />
           <Header2 />
+        <div className="my_info">
+            <div className="my_info_profile">
+                        <div className="my_info_img">
+                            <img className="my_info_profile_img"src={profile}></img>
+                            <div className="my_info_profile_bg"></div>
+                        </div>
+
+                        <div className="my_info_bar-01"></div>
+                        <div className="my_info_block-01">
+                            <div className="my_info_nikname">닉네임</div>
+                            <div className="my_info_nikname_content">가치풀자</div>
+                        </div>
+                        <div className="my_info_bar-02"></div>
+                        <div className="my_info_block_02">
+                            <div className="ddaom">“</div>
+                            <div className="my_info_text">한 줄 소개 멘트입니다.</div>
+                        </div>
+                    </div>
+                    <div className="my_info_follow">
+                        <div className="follow_title-bar"></div>
+                            <span className="follow_title_text-01">팔로잉</span>
+                            <span className="follow_title_text-02">팔로워</span>
+                        <div className="follow_num-bar"></div>
+                            <span className="follow_num-01">128</span>
+                            <span className="follow_num-02">121444</span>
+            </div>
+        </div>
+
         <div className="myfeed">
         <div class="info">
             <div class="line1"></div>
