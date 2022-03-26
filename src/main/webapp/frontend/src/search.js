@@ -5,7 +5,8 @@ import Header1 from "./header";
 import Header2 from "./header2";
 import searchbttn from "./img/searchbttn.png";
 import loading from "./img/loading.gif"
-import ddabong from "./img/ddabong.png";
+import full_heart from "./img/full_heart.png";
+import empty_heart from "./img/empty_heart.png";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import moment from 'moment';
@@ -21,6 +22,10 @@ let firstOpen = true;
 function Search() {
   const [isLoading, setLoading] = useState(true);
   const [like, setLike] = useState([]);
+  const [heart, setHeart] = useState(false);
+  const toggleHeart = () =>{
+    setHeart(previousState => !previousState);
+  }
   let navigate = useNavigate();
   let isLogin = useSelector((state)=>state);
   let dispatch = useDispatch();
@@ -58,8 +63,11 @@ function Search() {
               let problem = problemSet[problemIdx[randNum[idx]]];
               const time = moment(problem.updated).format('YYYY.MM.DD');
               return (
-                <div class="box" onClick={()=>{navigate("/feed2"); dispatch({type:'assign', payload:{problem:problem, time:time}})}} style={{cursor:"pointer"}}>
-                    <div class="box_title">
+                <div class="box" onClick={()=>{dispatch({type:'assign', payload:{problem:problem, time:time}})}} style={{cursor:"pointer"}}>
+                    <div class="box_title" onClick={() => navigate("/feed2")}
+                    /*navigate: class="box"로 설정시 좋아요 버튼 누르면 바로 문제풀기로 이동
+                    --> title로 수정*/>
+                      
                       {idx+1}. {problem.title}<br />
                       {time}
                     </div>
@@ -80,7 +88,18 @@ function Search() {
                         <span>{problem.point}</span>
                       </div>
                     </div>
-                    <img src={ddabong} id="ddabong" style={{width:"40px", marginTop:"30px", cursor:"pointer"}} onClick={(event)=>{likeEvent(problem,idx,event)}}/>
+                    {
+
+                        heart === false?
+                        <img src={empty_heart} className="heart"
+                        onClick={(event)=>{likeEvent(problem,idx,event); toggleHeart()}}>
+                        </img>
+                        : <img src={full_heart} className="heart" 
+                        onClick={() => toggleHeart()} 
+                        /*onClick={(event)=>{likeEvent(problem,idx,event)}}*/></img>
+                    }
+
+                     
                 </div>
               )})
           }
