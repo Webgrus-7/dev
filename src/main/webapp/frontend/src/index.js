@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
+import axios from 'axios';
 import { Provider } from 'react-redux';
 import { createStore, combineReducers } from 'redux';
 
@@ -33,7 +34,32 @@ function returnProblem(problem=initialProblem, action)
     return problem;
   }
 }
-let store = createStore(combineReducers({checkLogin, returnProblem}));
+let initialState = [
+  {userID:"", nickname:""}
+]
+function returnUser(state = initialState, action)
+{
+  if(action.type==='nickname')
+  {
+    let newState = [...state];
+    newState.userID = action.payload.userID;
+    axios.get("/user/"+newState.userID,
+    {
+      params: {
+        userID:newState.userID,
+      }
+    }).then((response)=>{
+      newState.nickname = response.data.nickname;
+      newState.intro = response.data.intro;
+    })
+    return newState;
+  }
+  else
+  {
+    return state;
+  }
+}
+let store = createStore(combineReducers({checkLogin, returnProblem, returnUser}));
 
 ReactDOM.render(
   <React.StrictMode>

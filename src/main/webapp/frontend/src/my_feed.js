@@ -4,12 +4,19 @@ import Header2 from "./header2";
 import profile from "./img/profile.png"
 import React, { useState } from "react";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import moment from 'moment';
+import 'moment/locale/ko';
 
 function MyFeed() {
   const [user, setUser] = useState([]);
   const [like, setLike] = useState([]);
   const [infoLoading, setInfoLoading] = useState(false);
   const [likeLoading, setLikeLoading] = useState(false);
+  let navigate = useNavigate();
+  let dispatch = useDispatch();
+  let userData = useSelector((state)=>state);
   return (
       <div className="myfeed_outer" style={{overflow: 'scroll'}} onLoad={()=>{userInfo(); userLike()}}>
           <Header />
@@ -24,12 +31,12 @@ function MyFeed() {
                         <div className="my_info_bar-01"></div>
                         <div className="my_info_block-01">
                             <div className="my_info_nikname">닉네임</div>
-                            <div className="my_info_nikname_content">가치풀자</div>
+                            <div className="my_info_nikname_content">{userData.returnUser.nickname}</div>
                         </div>
                         <div className="my_info_bar-02"></div>
                         <div className="my_info_block_02">
                             <div className="ddaom">“</div>
-                            <div className="my_info_text">한 줄 소개 멘트입니다.</div>
+                            <div className="my_info_text">{userData.returnUser.intro}</div>
                         </div>
                     </div>
                     <div className="my_info_follow">
@@ -57,11 +64,13 @@ function MyFeed() {
                     user.length===0
                     ? null
                     : user.map((a,idx)=>{
+                        const time = moment(user[idx].updated).format('YYYY.MM.DD');
                         return (
-                                <div class="feed_box">
+                                <div class="feed_box" style={{cursor:"pointer"}} onClick={()=>{navigate("/feed2");
+                                dispatch({type:'assign', payload:{problem:user[idx], time:time}})}}>
                                     <div class="feed_box_title">
                                     {idx+1}. {user[idx].title}<br />
-                                    {user[idx].updated}
+                                    {time}
                                     </div>
                                     <div class="feed_box_by">
                                     by <span class="feed_byname">{user[idx].creator_nick}</span>
@@ -106,11 +115,13 @@ function MyFeed() {
                     like.length===0
                     ? null
                     : like.map((b,idx)=>{
+                        const time = moment(like[idx].updated).format('YYYY.MM.DD');
                         return (
-                                <div class="feed_box">
+                                <div class="feed_box" style={{cursor:"pointer"}} onClick={()=>{navigate("/feed2");
+                                dispatch({type:'assign', payload:{problem:like[idx], time:time}})}}>
                                     <div class="feed_box_title">
                                     {idx+1}. {like[idx].title}<br />
-                                    {like[idx].updated}
+                                    {time}
                                     </div>
                                     <div class="feed_box_by">
                                     by <span class="feed_byname">{like[idx].creator_nick}</span>
