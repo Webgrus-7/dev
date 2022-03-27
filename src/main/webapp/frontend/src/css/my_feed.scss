@@ -174,7 +174,7 @@ body {
 /*페이지1*/
 .myfeed {
   display: flex;
-  height: 900px;
+  height: auto;
   padding-left: 60px;
   padding-right: 60px;
   .info {
@@ -183,9 +183,16 @@ body {
     flex: 33%;
     border-right: rgba(185, 185, 185, 0.438);
     border-right-style: dotted;
+    padding-bottom: 80px;
   }
 }
 .myfeed :last-child {
+  border-right: none;
+}
+.boxes :last-child {
+  border-right: solid 0.2px #d4d4d4;
+}
+.feed_box :last-child {
   border-right: none;
 }
 .line1 {
