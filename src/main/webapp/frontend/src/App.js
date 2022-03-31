@@ -12,7 +12,21 @@ import Search from "./search";
 import MyFeed from "./my_feed";
 import FeedSolve from "./feed_solve";
 import { BrowserRouter, Route, Routes } from "react-router-dom"; 
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import axios from 'axios';
 function App() {
+  let login = useSelector((state)=>state);
+  let dispatch = useDispatch();
+  const JWT_EXPIRY_TIME = 180 * 1000;
+  useEffect(()=>{
+    if(login.checkLogin === true)
+    {
+      axios.defaults.headers.common['ACCESS_TOKEN'] = login.loginToken.accessToken;
+      axios.defaults.headers.common['REFRESH_TOKEN'] = login.loginToken.refreshToken;
+      setTimeout(refresh, JWT_EXPIRY_TIME);
+    }
+  },[login.returnUser.nickname]);
   return (
     <div className="App">
       <BrowserRouter>
@@ -34,6 +48,16 @@ function App() {
       </BrowserRouter>
     </div>
   );
+  function refresh()
+  {
+    axios.post('/auth/accessToken').then(response=>{
+      const accessToken = response.data;
+      dispatch({type:"token", payload:{accessToken:accessToken.access_TOKEN, refreshToken:accessToken.refresh_TOKEN}});
+      axios.defaults.headers.common['ACCESS_TOKEN'] = accessToken.access_TOKEN;
+      axios.defaults.headers.common['REFRESH_TOKEN'] = login.loginToken.refreshToken;
+    });
+    setTimeout(refresh, JWT_EXPIRY_TIME);
+  }
 }
 
 export default App;

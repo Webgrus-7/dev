@@ -1,7 +1,7 @@
 import Header from "./header";
 import Header2 from "./header2";
 import { Link, useNavigate } from "react-router-dom";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import axios from 'axios';
 import "./css/login.scss";
@@ -13,9 +13,8 @@ function Login()
     const navigate = useNavigate();
     let [userID, setID] = useState("");
     let [password, setPW] = useState("");
-    let [nickname, setNick] = useState("");
     let dispatch = useDispatch();
-    let user = useSelector((state)=>state);
+    let login = useSelector((state)=>state);
     let text = ["web test는 어쩌고 저쩌고...아직 못 정함",<br />,
     "기반으로 한 공부하는 모두를 위한 공유 스터디서비스"]
     return (
@@ -32,8 +31,8 @@ function Login()
                         <input type="password" className="ID__input-01" onChange={(e)=>{setPW(e.target.value)}}></input>
                     </form>
                 </div>
-                <div className="login__block__button">
-                    <span className="login__block__button__text" onClick={()=>{check(); onLogin()}}>로그인</span>
+                <div className="login__block__button" style={{cursor:"pointer"}} onClick={()=>{check(); onLogin()}}>
+                    <span className="login__block__button__text">로그인</span>
                 </div>
                 <Link to="/join1">
                     <span className="login__block__text-02">가치풀자가 처음이신가요?</span>
@@ -81,14 +80,13 @@ function Login()
                 else
                 {
                     const accessToken = response.data;
-                    // API 요청하는 콜마다 헤더에 accessToken, refreshToken 담아 보내도록 설정
                     axios.defaults.headers.common['ACCESS_TOKEN'] = accessToken.access_TOKEN;
                     axios.defaults.headers.common['REFRESH_TOKEN'] = accessToken.refresh_TOKEN;
-                    // 일정시간 지날 때마다 accessToken 재발급 함수 호출
-                    setTimeout(refresh, JWT_EXPIRY_TIME - 100);
-                    dispatch({type:"login"});//redux의 로그인 상태변경 함수 호출
-                    dispatch({type:"nickname", payload:{userID}});
-                    setTimeout(()=>{navigate("/")}, 2000);
+                    dispatch({type:"login"});
+                    dispatch({type:"token", payload:{accessToken:accessToken.access_TOKEN, refreshToken:accessToken.refresh_TOKEN}});
+                    dispatch({type:"nickname", payload:{userID:userID}});
+                    setTimeout(refresh, JWT_EXPIRY_TIME);
+                    setTimeout(()=>{navigate("/")}, 4000);
                 }
             })
         );
@@ -96,16 +94,13 @@ function Login()
     function refresh()
     {
         const JWT_EXPIRY_TIME = 180 * 1000;
-        return (
-            axios.post('/auth/accessToken').then(response=>{
-                console.log(response);
-                const accessToken = response.data;
-                axios.defaults.headers.common['ACCESS_TOKEN'] = accessToken.access_TOKEN;
-                axios.defaults.headers.common['REFRESH_TOKEN'] = accessToken.refresh_TOKEN;
-                 // 일정시간 지날 때마다 accessToken 재발급 함수 호출
-                setTimeout(refresh, JWT_EXPIRY_TIME - 100);
-            })
-        );
+        axios.post('/auth/accessToken').then(response=>{
+        const accessToken = response.data;
+        dispatch({type:"token", payload:{accessToken:accessToken.access_TOKEN, refreshToken:accessToken.refresh_TOKEN}});
+        axios.defaults.headers.common['ACCESS_TOKEN'] = accessToken.access_TOKEN;
+        axios.defaults.headers.common['REFRESH_TOKEN'] = accessToken.refresh_TOKEN;
+        });
+        setTimeout(refresh, JWT_EXPIRY_TIME);
     }
 }
 

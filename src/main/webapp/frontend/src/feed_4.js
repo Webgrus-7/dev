@@ -72,9 +72,9 @@ function Feed()
                                 onChange={(e)=>{setView(viewInput(e.target.value, idx))}}></input></li>
                             })
                         }
-                        <span className="feed__question__text-02" onClick={(()=>{setCount(addCount)})}>문항 추가</span>
+                        <span className="feed__question__text-02" style={{cursor:"pointer"}} onClick={(()=>{setCount(addCount)})}>문항 추가</span>
                         <span className="feed__question__text-02">/</span>
-                        <span className="feed__question__text-02" onClick={(()=>{setCount(subCount)})}>문항 삭제</span>
+                        <span className="feed__question__text-02" style={{cursor:"pointer"}} onClick={(()=>{setCount(subCount)})}>문항 삭제</span>
                     </ol>
                 }
                 <div>
@@ -84,8 +84,8 @@ function Feed()
                 <div>
                 <input className="feed__question__input-01" style={{marginLeft:'590px'}} type="text" onChange={(e)=>{setAnswer(e.target.value)}}></input>
                 </div>
-                <div className="feed__question__button-01" onClick={()=>{viewIsEmpty()}}>글 작성</div>
-                <div className="feed__question__button-02" onClick={()=>{navigate("/")}} style={{marginTop: '0px', marginLeft:'20px'}}>취소</div>
+                <div className="feed__question__button-01" style={{cursor:"pointer"}} onClick={()=>{viewIsEmpty()}}>글 작성</div>
+                <div className="feed__question__button-02" onClick={()=>{navigate("/")}} style={{cursor:"pointer", marginTop: '0px', marginLeft:'20px'}}>취소</div>
             </div>
             
         </div>
