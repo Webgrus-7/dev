@@ -16,7 +16,6 @@ function MyFeed() {
   const [likeLoading, setLikeLoading] = useState(false);
   let navigate = useNavigate();
   let dispatch = useDispatch();
-  let userData = useSelector((state)=>state);
   return (
       <div className="myfeed_outer" style={{overflow: 'scroll'}} onLoad={()=>{userInfo(); userLike()}}>
           <Header />
@@ -31,12 +30,12 @@ function MyFeed() {
                         <div className="my_info_bar-01"></div>
                         <div className="my_info_block-01">
                             <div className="my_info_nikname">닉네임</div>
-                            <div className="my_info_nikname_content">{userData.returnUser.nickname}</div>
+                            <div className="my_info_nikname_content">{sessionStorage.getItem('nickname')}</div>
                         </div>
                         <div className="my_info_bar-02"></div>
                         <div className="my_info_block_02">
                             <div className="ddaom">“</div>
-                            <div className="my_info_text">{userData.returnUser.intro}</div>
+                            <div className="my_info_text">{sessionStorage.getItem('intro')}</div>
                         </div>
                     </div>
                     <div className="my_info_follow">
