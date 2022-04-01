@@ -50,8 +50,8 @@
 }
 .feed__profile-01
 {
-    width: 231px;
-    height: 218px;
+    width: 221px;
+    height: 208px;
     margin: 7px 0 6px 17px;
     border-radius: 50%;
     opacity: 0.18;
@@ -61,64 +61,73 @@
 }
 .feed__profile__img-01
 {
-    width: 230px;
-    height: 231px;
+    width: 220px;
+    height: 221px;
     margin: 0 18px 0 0;
     opacity: 0.81;
 }
 .feed__bar-01
 {
     width: 0;
-    height: 173.5px;
-    margin: 137.5px 0 0 24px;
+    height: 250px;
+    margin: 35px 0 0 0px;
     opacity: 0.44;
     border: solid 2px #4a4a4a;
     position: absolute;
+}
+.feed__profile__text-block{
+    width:270px;
+    height: auto;
 }
 .feed__profile__text-01
 {
     width: 85px;
     height: 32px;
-    margin: 135px 11px 0px 44px;
+    margin: 35px 11px 0px 20px;
     @include font();
     font-size: 28px;
     font-weight: 800;
     line-height: 1.14;
     letter-spacing: 0.42px;
     color: #384ea2;
-    display: inline-block;
+    display: block;
 }
 .feed__profile__text-02
 {
     width: 94px;
     height: 28px;
-    margin: 10px 0 0 44px;
+    margin: 10px 0 0 20px;
     @include font();
     font-size: 24px;
     line-height: 1.17;
     letter-spacing: 0.36px;
     display: inline-block;
 }
-.feed__profile__text-03
+.feed__profile__button
 {
-    width: 109px;
-    height: 32px;
-    margin: 35px 11px 10px 44px;
-    @include font();
-    font-size: 28px;
-    font-weight: 800;
-    line-height: 1.14;
-    letter-spacing: 0.42px;
-    color: #384ea2;
+    width: 74px;
+    height: 27px;
+    margin: 170px 0px 0px 0px;
+    padding: 15px 30px 16px;
+    border-radius: 101px;
+    border: solid 2px #384ea2;
+    text-align: center;
     display: inline-block;
+    float: right;
 }
-.feed__profile__text-04
+.feed__profile__button-follow
 {
-    @extend .feed__profile__text-02;
-    width: 191px;
-    height: 28px;
-    margin: 10px 0 0px 44px;
+    width: 41px;
+    height: 27px;
+    @include font();
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.23;
+    letter-spacing: 0.33px;
+    color: #384ea2;
 }
+
 .feed__block-02
 {
     width: 1417px;
@@ -146,6 +155,7 @@
     display: inline-block;
     position: absolute;
 }
+
 .feed__profile__text-05
 {
     width: 260px;
@@ -213,11 +223,12 @@
 .feed__block-03
 {
     display: flex;
+    width:1270px;
 }
 .feed__profile__detail-01
 {
     width: 273.2px;
-    height: 366.5px;
+    height: 215.5px;
     margin: 62.5px 25.8px 0 71.8px;
     box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.08);
     border: solid 0.2px #d4d4d4;
@@ -232,7 +243,7 @@
 {
     width: 231px;
     height: 69px;
-    margin: 230.5px 26.4px 0 15.6px;
+    margin: 20px 26.4px 0 15.6px;
     @include font();
     font-weight: 800;
     font-size: 19px;
@@ -240,6 +251,83 @@
     letter-spacing: 0.29px;
     color: #141414;
     display: inline-block;
+}
+/*유저의 각 문제 정보*/
+.user_data_info {
+    display: inline-block;
+    margin-left: 12px;
+    margin-top: 40px;
+    width: 250px;
+  }
+  .user_line1 {
+    height: 1px;
+    opacity: 0.61;
+    border: solid 1px #4a4a4a;
+    background-color: #4a4a4a;
+    margin-bottom: 5.8px;
+  }
+  .user_infoName {
+    @include font();
+    font-size: 16px;
+    line-height: 1.13;
+    letter-spacing: 0.23px;
+    color: #384ea2;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 800;
+  }
+  .user_infoName span {
+      margin:0;
+  }
+  
+  .user_line2 {
+    opacity: 0.21;
+    border: solid 0.01px #4a4a4aad;
+    margin-bottom: 5.8px;
+    margin-top: 5.8px;
+  }
+  .user_infoData {
+    @extend .user_infoName;
+    color: #5b5b5b;
+  }
+  .user_infoData :nth-child(2){
+      margin-left: 40px;
+  }
+  /**/
+  .feed__profile__text-02
+{
+    width: 94px;
+    height: 28px;
+    margin: 10px 0 0 20px;
+    @include font();
+    font-size: 24px;
+    line-height: 1.17;
+    letter-spacing: 0.36px;
+    display: inline-block;
+}
+/*더보기 버튼*/
+.user__question__button
+{
+    width: 94px;
+    height: 27px;
+    margin: 312px 0px 0px -170px;
+    padding: 15px 30px 16px;
+    border-radius: 101px;
+    border: solid 2px #384ea2;
+    text-align: center;
+    float: right;
+}
+.user__question__button-more
+{
+    width: 41px;
+    height: 27px;
+    @include font();
+    font-family: 'SpoqaHanSansNeo-Regular', serif;
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.23;
+    letter-spacing: 0.33px;
+    color: #384ea2;
 }
 .feed__inner-02
 {
@@ -255,7 +343,7 @@
     padding: 18px 519px 18px 22px;
     background-color: #ebebeb;
 }
-.feed__table__subject
+.subject
 {
     width: 220px;
     height: 36px;
