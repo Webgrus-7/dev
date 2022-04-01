@@ -4,6 +4,7 @@ import Header1 from "./header";
 import Header2 from "./header2";
 import full_heart from "./img/full_heart.png";
 import empty_heart from "./img/empty_heart.png";
+import { Link, useNavigate } from "react-router-dom";
 
 function FollowingFeed() {
   const [heart, setHeart] = useState(false);
@@ -27,9 +28,11 @@ function FollowingFeed() {
               1. 토익 추천 문제 토플 추천 문제, 전공 추천문제 <br />
               (2018.08.10)
             </div>
-            <div class="box_by">
-              by <span class="byname">조예린</span>
-            </div>
+            <Link to="/feed1">
+              <div class="box_by">
+                by <span class="byname">조예린</span>
+              </div>
+            </Link>
             <div class="info">
               <div class="line1"></div>
               <div class="infoName">
