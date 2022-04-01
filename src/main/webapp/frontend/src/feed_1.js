@@ -3,6 +3,7 @@ import Header2 from "./header2"
 import "./css/feed.scss"
 import profile from "./img/profile.png"
 import { Link } from "react-router-dom";
+let text_title = ["토익 추천 문제 토플 추천 문제, 전공 추천문제"]
 function Feed()
 {
     return (
@@ -14,18 +15,14 @@ function Feed()
                     <div className="feed__profile-01"></div>
                     <img className="feed__profile__img-01" src={profile}></img>
                     <div className="feed__bar-01"></div>
-                    <div>
+                    <div className="feed__profile__text-block">
                         <span className="feed__profile__text-01">닉네임</span>
-                    </div>
-                    <div>
                         <span className="feed__profile__text-02">가치풀자</span>
+                        <div className="feed__profile__button">
+                            <span className="feed__profile__button-follow">팔로우</span>
+                        </div>
                     </div>
-                    <div>
-                        <span className="feed__profile__text-03">대표분야</span>
-                    </div>
-                    <div>
-                        <span className="feed__profile__text-04">토익, 토플, 한국사</span>
-                    </div>
+
                 </div>
                 <div className="feed__bar-02"></div>
                 <div className="feed__block-02">
@@ -42,23 +39,40 @@ function Feed()
                     <div className="feed__block-03">
                         <div className="feed__profile__detail-01">
                             <Link to="/feed2">
-                            <span className="feed__profile__detail__text-01">토익 추천 문제 토플 추천 문제, 전공 추천문제</span>
+                            <span className="feed__profile__detail__text-01">{text_title}</span>
+                            </Link>
+                            <div class="user_data_info">
+                                    <div class="user_line1"></div>
+                                    <div class="user_infoName">
+                                        <span>좋아요</span>
+                                        <span>정답 률</span>
+                                        <span>난이도</span>
+                                    </div>
+                                    <div class="user_line2"></div>
+                                    <div class="user_infoData">
+                                        <span>88</span>
+                                        <span>99%</span>
+                                        <span>★★★☆☆</span>
+                                    </div>
+                            </div>
+                        </div>
+                        <div className="feed__profile__detail-02">
+                            <Link to="/feed2">
+                            <span className="feed__profile__detail__text-01">{text_title}</span>
                             </Link>
                         </div>
                         <div className="feed__profile__detail-02">
                             <Link to="/feed2">
-                            <span className="feed__profile__detail__text-01">토익 추천 문제 토플 추천 문제, 전공 추천문제</span>
+                            <span className="feed__profile__detail__text-01">{text_title}</span>
                             </Link>
                         </div>
                         <div className="feed__profile__detail-02">
                             <Link to="/feed2">
-                            <span className="feed__profile__detail__text-01">토익 추천 문제 토플 추천 문제, 전공 추천문제</span>
+                            <span className="feed__profile__detail__text-01">{text_title}</span>
                             </Link>
                         </div>
-                        <div className="feed__profile__detail-02">
-                            <Link to="/feed2">
-                            <span className="feed__profile__detail__text-01">토익 추천 문제 토플 추천 문제, 전공 추천문제</span>
-                            </Link>
+                        <div className="user__question__button">
+                            <span className="user__question__button-more">더 보기</span>
                         </div>
                     </div>
                 </div>
