@@ -11,6 +11,8 @@ import Main2 from "./main2";
 import Search from "./search";
 import MyFeed from "./my_feed";
 import FeedSolve from "./feed_solve";
+import FeedSolve from "./feed_solve";
+import FollowingFeed from "./following_feed"
 import { BrowserRouter, Route, Routes } from "react-router-dom"; 
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
@@ -43,6 +45,7 @@ function App() {
           <Route path="/main2" element={<Main2/>} />
           <Route path="/search" element={<Search/>} />
           <Route path="/my_feed" element={<MyFeed/>} />
+          <Route path="/following_feed" element={<FollowingFeed/>} />
           <Route path="/" element={<Main/>} />
         </Routes>
       </BrowserRouter>
