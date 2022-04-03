@@ -11,13 +11,46 @@
 }
 body {
   overflow-x: hidden;
+  overflow-y: scroll;
 }
 /*페이지1*/
 .search {
   display: flex;
   flex-direction: column;
   height: 1069px;
+
 }
+/*following_feed 배경색 & title box*/
+.following_feed{
+  @extend .search;
+  background-color: #FEFDEA;
+}
+.follwoing_feed_box{
+  background-image: url(../img/following_feed_title_box.jpg);
+  background-repeat: no-repeat;
+  width: 1638px;
+  height: 200px;
+  background-size: cover;
+  margin: 0 auto;
+  margin-bottom: 50px;
+  margin-top: 60px;
+}
+.following_feed_box-text{
+  margin: 25px 0 0 25px;
+  @include font();
+}
+.following_feed_box-text-01{
+  display: block;
+  font-size: 35px;
+  margin-bottom: 90px;
+color:#654B8D;
+}
+.following_feed_box-text-02{
+  font-size: 21px;
+  color: #4A4A4A;
+}
+
+
 .sort {
   width: 700px;
   margin: 70px auto; /*좌우 중앙배치*/

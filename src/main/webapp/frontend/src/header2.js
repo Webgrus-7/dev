@@ -9,7 +9,7 @@ function Header2() {
   return (
     <div className="login__outer-02">
       <div className="menu-02">
-        <Link to="/feed1">
+        <Link to="/following_feed">
         <span className="feed__text-04">피드</span>
         </Link>
         <Link to="/search">
