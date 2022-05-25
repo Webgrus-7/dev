@@ -82,6 +82,7 @@ function Login()
                     const accessToken = response.data;
                     axios.defaults.headers.common['ACCESS_TOKEN'] = accessToken.access_TOKEN;
                     axios.defaults.headers.common['REFRESH_TOKEN'] = accessToken.refresh_TOKEN;
+                    console.log(accessToken);
                     dispatch({type:"login"});
                     dispatch({type:"token", payload:{accessToken:accessToken.access_TOKEN, refreshToken:accessToken.refresh_TOKEN}});
                     dispatch({type:"nickname", payload:{userID:userID}});

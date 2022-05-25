@@ -5,7 +5,7 @@ import lombok.Getter;
 @Getter
 public class UserIDDuplicateException extends RuntimeException{
 
-    private ErrorCode errorCode;
+    private final ErrorCode errorCode;
 
     public UserIDDuplicateException(String message, ErrorCode errorCode){
         super(message);

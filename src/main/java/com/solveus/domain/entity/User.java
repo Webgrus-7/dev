@@ -52,6 +52,12 @@ public class User implements UserDetails {
     @Column(nullable = false)
     private String salt;
 
+    @Column(nullable = true, columnDefinition = "Integer default 0")
+    private Integer following_count = 0;
+
+    @Column(nullable = true, columnDefinition = "Integer default 0")
+    private Integer follower_count = 0;
+
     @CreatedDate
     @Column(updatable = false)
     private LocalDateTime created;
@@ -67,6 +73,19 @@ public class User implements UserDetails {
     @Builder.Default
     private List<LikeList> like_list = new ArrayList<LikeList>();
 
+    @OneToMany(mappedBy = "follower")
+    @Builder.Default
+    private List<FollowRelation> follower_list = new ArrayList<FollowRelation>();
+
+    @OneToMany(mappedBy = "following")
+    @Builder.Default
+    private List<FollowRelation> following_list = new ArrayList<FollowRelation>();
+
+    @OneToMany(mappedBy = "userID")
+    @Builder.Default
+    private List<SolvedList> solved_list = new ArrayList<>();
+
+
 
 
     @Builder
@@ -80,6 +99,8 @@ public class User implements UserDetails {
         this.major = major;
         this.intro = intro;
         this.salt = salt;
+        this.follower_count = 0;
+        this.following_count = 0;
     }
 
 

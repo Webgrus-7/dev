@@ -12,12 +12,14 @@ import 'moment/locale/ko';
 function MyFeed() {
   const [user, setUser] = useState([]);
   const [like, setLike] = useState([]);
+  const [solved, setSolved] = useState([]);
   const [infoLoading, setInfoLoading] = useState(false);
   const [likeLoading, setLikeLoading] = useState(false);
+  const [solvedLoading, setSolvedLoading] = useState(false);
   let navigate = useNavigate();
   let dispatch = useDispatch();
   return (
-      <div className="myfeed_outer" style={{overflow: 'scroll'}} onLoad={()=>{userInfo(); userLike()}}>
+      <div className="myfeed_outer" style={{overflow: 'scroll'}} onLoad={()=>{userInfo(); userLike(); userSolved()}}>
           <Header />
           <Header2 />
         <div className="my_info">
@@ -54,7 +56,7 @@ function MyFeed() {
             <span class="info_title">올린 문제</span>
             <div class="line2"></div>
             {
-                infoLoading === false || likeLoading === false
+                infoLoading === false || likeLoading === false || solvedLoading === false
                 ? <span class="info_num">로딩 중...</span>
                 : <span class="info_num">{user.length}</span>
             }
@@ -98,14 +100,53 @@ function MyFeed() {
             <div class="line1"></div>
             <span class="info_title">푼 문제</span>
             <div class="line2"></div>
-            <span class="info_num">123</span>
+            {
+                infoLoading === false || likeLoading === false || solvedLoading === false
+                ? <span class="info_num">로딩 중...</span>
+                : <span class="info_num">{solved.length}</span>
+            }
+            <div class="boxes">
+                {
+                    solved.length===0
+                    ? null
+                    : solved.map((a,idx)=>{
+                        const time = moment(solved[idx].updated).format('YYYY.MM.DD');
+                        return (
+                                <div class="feed_box" style={{cursor:"pointer"}} onClick={()=>{navigate("/feed2");
+                                dispatch({type:'assign', payload:{problem:solved[idx], time:time}})}}>
+                                    <div class="feed_box_title">
+                                    {idx+1}. {solved[idx].title}<br />
+                                    {time}
+                                    </div>
+                                    <div class="feed_box_by">
+                                    by <span class="feed_byname">{solved[idx].creator_nick}</span>
+                                    </div>
+                                    <div class="feed_data_info">
+                                    <div class="feed_line1"></div>
+                                    <div class="feed_infoName">
+                                        <span>좋아요</span>
+                                        <span>정답 률</span>
+                                        <span>난이도</span>
+                                    </div>
+                                    <div class="feed_line2"></div>
+                                    <div class="feed_infoData">
+                                        <span>{solved[idx].like_count}</span>
+                                        <span>99%</span>
+                                        <span>{solved[idx].point}</span>
+                                    </div>
+                                    </div>
+                                </div>
+                        );
+                    })
+                }
+            </div>
         </div>
         <div class="info">
             <div class="line1"></div>
             <span class="info_title">좋아요</span>
             <div class="line2"></div>
             {
-                infoLoading === false || likeLoading === false
+                infoLoading === false || likeLoading === false || solvedLoading === false
                 ? <span class="info_num">로딩 중...</span>
                 : <span class="info_num">{like.length}</span>
             }
@@ -166,6 +207,17 @@ function MyFeed() {
           .then((response)=>{
             setLike(response.data);
             setLikeLoading(true);
+            console.log(response.data);
+          })
+      );
+  }
+  function userSolved()
+  {
+      return (
+          axios.get("/solved")
+          .then((response)=>{
+            setSolved(response.data);
+            setSolvedLoading(true);
             console.log(response.data);
           })
       );

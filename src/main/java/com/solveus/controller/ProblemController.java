@@ -2,9 +2,11 @@ package com.solveus.controller;
 
 import com.solveus.domain.dto.NewProblem;
 import com.solveus.domain.dto.ProblemDto;
+import com.solveus.domain.dto.UserDto;
 import com.solveus.domain.entity.Static;
 import com.solveus.domain.entity.User;
 import com.solveus.service.AuthService;
+import com.solveus.service.FollowService;
 import com.solveus.service.ProblemService;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
@@ -24,6 +26,7 @@ public class ProblemController {
 
     private final AuthService authService;
     private final ProblemService problemService;
+    private final FollowService followService;
 
     //문제 생성
     @RequestMapping(value = "/new", method = RequestMethod.POST)
@@ -80,6 +83,7 @@ public class ProblemController {
                 .body(problemService.getAllProblems());
     }
 
+    // 문제 좋아요/ 좋아요 취소
     @RequestMapping(value = "/like/{problemID}", method = RequestMethod.POST)
     @ApiImplicitParams({
             @ApiImplicitParam(name = "ACCESS_TOKEN", required = true, allowEmptyValue = false, paramType = "header", dataTypeClass = String.class ),
@@ -91,6 +95,21 @@ public class ProblemController {
         return ResponseEntity.status(HttpStatus.OK)
                 .body(like_count);
     }
+
+    // 팔로잉한 사용자의 모든 문제 목록
+    @RequestMapping(value = "/following", method = RequestMethod.GET)
+    @ApiImplicitParams({
+            @ApiImplicitParam(name = "ACCESS_TOKEN", required = true, allowEmptyValue = false, paramType = "header", dataTypeClass = String.class ),
+            @ApiImplicitParam(name = "REFRESH_TOKEN", required = true, allowEmptyValue = false, paramType = "header", dataTypeClass = String.class)
+    })
+    public ResponseEntity<List<ProblemDto>> followingProblems(HttpServletRequest request ) throws  Exception {
+        User userID = authService.find_user(request);
+        // 사용자가 팔로잉한 사용자의 목
+        List<UserDto> allFollowingUsers = followService.getAllFollowingUser(userID);
+        return ResponseEntity.status(HttpStatus.OK)
+                .body(problemService.getAllFollowingProblem(allFollowingUsers));
+    }
+
 
 
 

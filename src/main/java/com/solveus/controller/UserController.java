@@ -29,10 +29,10 @@ public class UserController {
 
 
     @RequestMapping(value = "/", method = RequestMethod.GET)
-    @ApiImplicitParams({
-            @ApiImplicitParam(name = "ACCESS_TOKEN", required = true, allowEmptyValue = false, paramType = "header", dataTypeClass = String.class ),
-            @ApiImplicitParam(name = "REFRESH_TOKEN", required = true, allowEmptyValue = false, paramType = "header", dataTypeClass = String.class)
-    })
+//    @ApiImplicitParams({
+//            @ApiImplicitParam(name = "ACCESS_TOKEN", required = true, allowEmptyValue = false, paramType = "header", dataTypeClass = String.class ),
+//            @ApiImplicitParam(name = "REFRESH_TOKEN", required = true, allowEmptyValue = false, paramType = "header", dataTypeClass = String.class)
+//    })
     public List<UserDto> list(HttpServletRequest request) {
         List<UserDto> userDtoList = userService.getAllUser();
 

@@ -34,6 +34,8 @@ public class AuthController {
                 .password(value.getPassword())
                 .major(value.getMajor())
                 .intro(value.getIntro())
+                .following_count(value.getFollowing_count())
+                .follower_count(value.getFollower_count())
                 .build();
 
 

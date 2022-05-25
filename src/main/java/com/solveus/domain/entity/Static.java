@@ -76,6 +76,9 @@ public class Static {
     @OneToMany(mappedBy = "problemID")
     private List<LikeList> like_list = new ArrayList<LikeList>();
 
+    @OneToMany(mappedBy = "problemID")
+    private List<SolvedList> solvedList = new ArrayList<>();
+
     @CreatedDate
     @Column(updatable = false)
     private LocalDateTime created;
