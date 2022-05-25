@@ -49,7 +49,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)// JWT 토큰 기반 -> 세션 사용 X
                 .and()
                 .authorizeRequests()//사용 권한 체크\
-                .antMatchers("/auth/**", "/problem/all")
+                .antMatchers("/auth/**", "/problem/all","/user/")
                 .permitAll()
                 .anyRequest().authenticated()
                 //JwtAuthenFilter를 UsernamePasswordAuthFilter 전에 넣는다.(항상)

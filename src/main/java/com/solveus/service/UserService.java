@@ -41,21 +41,28 @@ public class UserService {
     private ProblemService problemService;
 
 
+    public UserDto makeUserDto(User user) {
+        UserDto userDto = UserDto.builder()
+                .id(user.getId())
+                .userID(user.getUserID())
+                .phone(user.getPhone())
+                .email(user.getEmail())
+                .major(user.getMajor())
+                .intro(user.getIntro())
+                .nickname(user.getNickname())
+                .follower_count(user.getFollower_count())
+                .following_count(user.getFollowing_count())
+                .build();
+
+        return  userDto;
+    }
     @Transactional
     public List<UserDto> getAllUser() {
         List<User> userList = userRepository.findAll();
         List<UserDto> userDtoList = new ArrayList<>();
 
         for(User user: userList){
-            UserDto userDto = UserDto.builder()
-                    .id(user.getId())
-                    .userID(user.getUserID())
-                    .phone(user.getPhone())
-                    .email(user.getEmail())
-                    .major(user.getMajor())
-                    .intro(user.getIntro())
-                    .nickname(user.getNickname())
-                    .build();
+            UserDto userDto = makeUserDto(user);
             userDtoList.add(userDto);
         }
         return userDtoList;
@@ -66,15 +73,7 @@ public class UserService {
         User user = userRepository.findByUserID(userID)
                 .orElseThrow(() -> new IllegalArgumentException("존재하지 않는 회원입니다."));
 
-        UserDto userDto = UserDto.builder()
-                .id(user.getId())
-                .userID(user.getUserID())
-                .phone(user.getPhone())
-                .email(user.getEmail())
-                .major(user.getMajor())
-                .intro(user.getIntro())
-                .nickname(user.getNickname())
-                .build();
+        UserDto userDto = makeUserDto(user);
 
         return userDto;
     }

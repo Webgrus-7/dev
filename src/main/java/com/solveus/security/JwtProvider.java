@@ -28,11 +28,11 @@ public class JwtProvider {
     private String REFRESH_KEY;
 
 
-    private  final long ACCESS_TOKEN_VALID_TIME = 3 * 60 * 1000L; // 3분
-    private  final long REFRESH_TOKEN_VALID_TIME = 60 * 60 * 24 * 7 * 1000L; // 1주
-//
-//    private  final long ACCESS_TOKEN_VALID_TIME = 3 * 60 * 10000L; // 3분
+//    private  final long ACCESS_TOKEN_VALID_TIME = 3 * 60 * 1000L; // 3분
 //    private  final long REFRESH_TOKEN_VALID_TIME = 60 * 60 * 24 * 7 * 1000L; // 1주
+////
+    private  final long ACCESS_TOKEN_VALID_TIME = 3 * 60 * 10000L; // 3분
+    private  final long REFRESH_TOKEN_VALID_TIME = 60 * 60 * 24 * 7 * 1000L; // 1주
 
 //    @Value("${spring.jwt.accessExpire}")
 //    private long  ACCESS_TOKEN_VALID_TIME;

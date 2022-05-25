@@ -35,6 +35,8 @@ public class JoinDto {
 
     private String major;
     private String intro;
+    private Integer following_count = 0;
+    private Integer follower_count = 0;
 
     public User toEntity() {
         User build = User.builder()
@@ -58,5 +60,8 @@ public class JoinDto {
         this.nickname = nickname;
         this.major = major;
         this.intro = intro;
+        this.follower_count = 0;
+        this.following_count = 0;
+
     }
 }

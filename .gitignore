@@ -37,4 +37,4 @@ out/
 .vscode/
 
 ## juyoung ##
-src/main/resources/config.properties
+src/main/resources/application-db.properties

@@ -15,20 +15,20 @@ import java.time.LocalDateTime;
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @EntityListeners(AuditingEntityListener.class)
-@Table(name="User_like_lists",schema = "solvewithus")
-public class LikeList {
+@Table(name="follow_relation",schema = "solvewithus")
+public class FollowRelation {
 
     @Id
     @GeneratedValue
     private Long id;
 
     @ManyToOne
-    @JoinColumn(name = "user_id")
-    private User userID;
+    @JoinColumn(name = "following")
+    private User following;
 
     @ManyToOne
-    @JoinColumn(name = "problem_id")
-    private Static problemID;
+    @JoinColumn(name = "follower")
+    private User follower;
 
 
     @CreatedDate
@@ -39,9 +39,9 @@ public class LikeList {
     private LocalDateTime updated;
 
     @Builder
-    public LikeList(Long id, User user_id, Static problem_id) {
+    public FollowRelation(Long id, User follower, User following) {
         this.id = id;
-        this.userID = user_id;
-        this.problemID = problem_id;
+        this.follower = follower;
+        this.following = following;
     }
 }

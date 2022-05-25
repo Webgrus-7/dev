@@ -1,16 +1,13 @@
 package com.solveus.domain.entity;
 
-import lombok.AccessLevel;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
-
+@Setter
 @Getter
 @Entity
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
@@ -28,11 +25,13 @@ public class SolvedList {
     @Column(nullable = true)
     private Integer p_count;
 
-    @Column(nullable = true)
-    private Long problem_id;
+    @ManyToOne
+    @JoinColumn(name = "problem_id")
+    private Static problemID;
 
-    @Column(nullable = true)
-    private Long user_id;
+    @ManyToOne
+    @JoinColumn(name = "user_id")
+    private User userID;
 
     @CreatedDate
     @Column(updatable = false)
@@ -42,11 +41,11 @@ public class SolvedList {
     private LocalDateTime updated;
 
     @Builder
-    public SolvedList(Long id, Integer grade, Integer p_count, Long problem_id, Long user_id) {
+    public SolvedList(Long id, Integer grade, Integer p_count, Static problem_id, User user_id) {
         this.id = id;
         this.grade = grade;
-        this.p_count = p_count;
-        this.problem_id = problem_id;
-        this.user_id = user_id;
+        this.p_count = 0;
+        this.problemID = problem_id;
+        this.userID = user_id;
     }
 }
